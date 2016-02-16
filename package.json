@@ -1,0 +1,26 @@
+{
+  "name": "RVS-Folio",
+  "version": "1.0.0",
+  "description": "A show-and-tell of notable design and development projects.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R-V-S/RVS-Folio.git"
+  },
+  "author": "Rajeev V. Singh",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/R-V-S/RVS-Folio/issues"
+  },
+  "homepage": "https://github.com/R-V-S/RVS-Folio",
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "grunt": "^0.4.5",
+    "gulp": "^3.9.1",
+    "node-sass": "^3.4.2",
+    "postcss": "^5.0.16"
+  }
+}
