@@ -1,0 +1,47 @@
+html, body {
+  font-family: $body-font, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(../images/bgnoise-01.png) repeat;
+  transition: color 0.33s ease, opacity 0.3s ease;
+}
+
+html {
+  opacity: 0;
+
+  &.wf-active {
+    opacity: 1;
+  }
+}
+
+section {
+  clear: both;
+}
+
+h2 {
+  
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.33s ease, opacity 0.3s ease;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: $body-font;
+  transition: color 0.33s ease, opacity 0.3s ease;
+
+  // states
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+i.fa {
+  margin-right: 5px;
+}

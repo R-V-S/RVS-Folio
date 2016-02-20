@@ -1,0 +1,45 @@
+section#title-bar {
+  background: $title-bar-bg;
+  box-shadow: 2px 0 3px $bar-shadow-color;
+  box-sizing: border-box;
+  height: 39px;
+  padding: 1px $page-indent 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  h1 {
+    margin: 2px 0 0 0;
+    display: inline-block;
+    img {
+      width: auto;
+      height: 40px;
+    }
+  }
+  a.contact {
+    float: right;
+    color: #ccc;
+    background-image: $contact-link-bg;
+    border-radius: 4px;
+    padding: 3px 15px;
+    font-size: 18px;
+    margin: 3px 0 0 0;
+    letter-spacing: 0.25px;
+    i {
+      color: #999;
+      font-size: 20px;
+      margin: 0 10px 0 0;
+    }
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+}
+#title-bar-shadow {
+  background: $title-accent;
+  box-shadow: 2px 0 3px $bar-shadow-color;
+  height: 45px;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}

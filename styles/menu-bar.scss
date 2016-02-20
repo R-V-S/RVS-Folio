@@ -1,0 +1,51 @@
+section#menu-bar {
+  background: $menu-bar-bg;
+  box-shadow: 0 2px 3px $bar-shadow-color;
+  height: 100%;
+  position: fixed;
+  top: 40px;
+  width: 160px;
+  z-index: 5;
+
+  button {
+    background-image: radial-gradient(transparent, transparent);
+    border-bottom: 1px solid $dark-gray-shadow;
+    color: #b3b3b3;
+    display: block;
+    font-size: 16px;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+
+    // children
+    i {
+      clear: both;
+      color: #666;
+      display: block;
+      font-size: 31px;
+      margin: 0 0 12px 0;
+    }
+
+    // states
+    &:hover, &:focus {
+      color: #ddd;
+      i {
+        color: #888;
+      }
+    }
+    &.active {
+      background-image: $active-menu-item-bg;
+      color: #ccc;
+      i {
+        color: #888;
+      }
+    }
+  }
+}
+#menu-bar-shadow {
+  width: 165px;
+  height: 100%;
+  background: $menu-bar-accent;
+  position: fixed;
+  z-index: 4;
+}
