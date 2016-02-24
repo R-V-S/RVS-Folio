@@ -6,4 +6,51 @@ section#content {
   p {
     padding: 0 $page-indent 0 0;
   }
+  section {
+    margin: 2em 0 0 0.5em;
+  }
+  section#introduction {
+    h2 {
+      display: inline;
+      color: #aaa;
+    }
+    p:first-of-type {
+      display: inline;
+    }
+    .flex-column {
+      margin: 1.5em 0 1em;
+      padding: 0 2em;
+
+      &:not(:last-child) {
+        border-right: 1px dashed #ccd;
+      }
+
+      p:first-of-type {
+        color: #555;
+      }
+    }
+    ol {
+      counter-reset: pseudo-ordered-list;
+      li {
+        list-style-type: none;
+        position: relative;
+        margin-bottom: 1.2em;
+        &:before {
+          border-radius: 20px;
+          border: 1px solid #ddd;
+          color: #666;
+          content: counter(pseudo-ordered-list);
+          counter-increment: pseudo-ordered-list;
+          font-weight: bold;
+          height: 25px;
+          left: -2em;
+          line-height: 132%;
+          position: absolute;
+          text-align: center;
+          top: 3px;
+          width: 25px;
+        }
+      }
+    }
+  }
 }

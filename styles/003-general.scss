@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   background: url(../images/bgnoise-01.png) repeat;
   transition: color 0.33s ease, opacity 0.3s ease;
+  color: #3a3a3f;
 }
 
 html {
@@ -19,12 +20,19 @@ section {
 }
 
 h2 {
-  
+
 }
 
 a {
   text-decoration: none;
   transition: color 0.33s ease, opacity 0.3s ease;
+  border-bottom: 1px dotted #ccc;
+  &, &:visited {
+    color: rgb(120,70,200);
+  }
+  &:hover, &:focus {
+    color: rgb(220,60,0);
+  }
 }
 
 button {
@@ -42,6 +50,14 @@ button {
   }
 }
 
+strong {
+  color: #223;
+}
+
 i.fa {
   margin-right: 5px;
+}
+
+.flex-me {
+  display: flex;
 }
