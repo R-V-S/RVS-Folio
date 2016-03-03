@@ -1,0 +1,43 @@
+.pannable:not(.active) {
+  opacity: 0;
+}
+
+.pannable-container {
+  overflow: hidden;
+}
+
+.pannable-thumbnail-container {
+  height: 100%;
+  float: right;
+  position: relative;
+  .pannable-thumbnail {
+    height: 100%;
+  }
+}
+
+.pannable-large {
+  transition: margin 0.5s ease;
+}
+
+.pannable-thumbnail-overlay {
+  position: absolute;
+  width: 100%;
+  .pannable-cover {
+    background: rgba(0,0,0,0.5);
+    position: relative;
+    width: 100%;
+    transition: height 0.2s ease;
+  }
+  .pannable-clear {
+    border: 2px solid black;
+    border-left: none;
+    border-right: none;
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  &:hover {
+    cursor: move;
+  }
+}
