@@ -1,21 +1,42 @@
 section#content {
-  padding: 46px $page-indent 0 190px;
+  padding: 46px 0 0 ($menu-width + $menu-shadow-width);
 
   font-size: 19px;
-  line-height: 166%;
+  line-height: 175%;
   p {
     padding: 0 $page-indent 0 0;
   }
+  a {
+    border-bottom: 1px dotted #ccc;
+  }
   section {
-    margin: 2em 0 0 0.5em;
+    margin: 3em 0 1em;
+    padding: 0 $page-indent 2em;
+    border-bottom: 4px solid rgba(0,0,0,0.1);
+    clear: both;
+
+    .block {
+      display: block;
+    }
+    .indent {
+    }
+    img {
+      max-width: 100%;
+    }
   }
   section#introduction {
     h2 {
       display: inline;
       color: #aaa;
     }
-    p:first-of-type {
-      display: inline;
+    h3 {
+      font-size: 21pt;
+    }
+    .intro-paragraph {
+      p:first-of-type {
+        display: inline;
+      }
+      color: #5c5c5c;
     }
     .flex-column {
       margin: 1.5em 0 1em;
@@ -31,10 +52,32 @@ section#content {
     }
     ol {
       counter-reset: pseudo-ordered-list;
+      padding: 0 0 0 10%;
+      transition: padding 0.3s ease;
+      
+      @media #{$medium} {
+        padding: 0 0 0 5%;
+      }
+      @media #{$small} {
+        padding: 0;
+      }
+
       li {
         list-style-type: none;
         position: relative;
-        margin-bottom: 1.2em;
+        margin-bottom: 1.5em;
+        clear: both;
+        overflow: hidden;
+
+        // children
+        p {
+          width: 60%;
+          @media #{$medium} {
+            width: 100%;
+          }
+        }
+
+        // pseudo-classes
         &:before {
           border-radius: 20px;
           border: 1px solid #ddd;
@@ -49,6 +92,26 @@ section#content {
           text-align: center;
           top: 3px;
           width: 25px;
+        }
+
+        // children
+        img {
+          float: right;
+          height: auto;
+          width: 30%;
+          margin-top: -10px;
+          margin-left: 10%;
+          margin-right: 10%;
+          display: block;
+          transition: width 0.3s ease;
+
+          @media #{$medium} {
+            width: 40%;
+          }
+          @media #{$small} {
+            width: 100%;
+            margin: 0;
+          }
         }
       }
     }

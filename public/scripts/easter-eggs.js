@@ -98,5 +98,5 @@ $(document).ready(function() {
     function pixelRgb(pixelData) {
       return {'r': pixelData.data[0], 'g': pixelData.data[1], 'b' : pixelData.data[2], 'a': pixelData.data[3] };
     }
-  };
-});
+  }
+})

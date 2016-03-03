@@ -15,15 +15,19 @@ html {
 section {
   clear: both; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: karmina, serif;
+  color: #515151;
+  font-weight: normal; }
+
 a {
   text-decoration: none;
   -webkit-transition: color 0.33s ease, opacity 0.3s ease;
-  transition: color 0.33s ease, opacity 0.3s ease;
-  border-bottom: 1px dotted #ccc; }
+  transition: color 0.33s ease, opacity 0.3s ease; }
   a, a:visited {
-    color: #7846c8; }
+    color: #c8461e; }
   a:hover, a:focus {
-    color: #dc3c00; }
+    color: #f05a32; }
 
 button {
   background: none;
@@ -49,18 +53,31 @@ i.fa {
   display: flex; }
 
 section#content {
-  padding: 46px 3% 0 190px;
+  padding: 46px 0 0 12.4%;
   font-size: 19px;
-  line-height: 166%; }
+  line-height: 175%; }
   section#content p {
-    padding: 0 3% 0 0; }
+    padding: 0 5% 0 0; }
+  section#content a {
+    border-bottom: 1px dotted #ccc; }
   section#content section {
-    margin: 2em 0 0 0.5em; }
+    margin: 3em 0 1em;
+    padding: 0 5% 2em;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    clear: both; }
+    section#content section .block {
+      display: block; }
+    section#content section img {
+      max-width: 100%; }
   section#content section#introduction h2 {
     display: inline;
     color: #aaa; }
-  section#content section#introduction p:first-of-type {
-    display: inline; }
+  section#content section#introduction h3 {
+    font-size: 21pt; }
+  section#content section#introduction .intro-paragraph {
+    color: #5c5c5c; }
+    section#content section#introduction .intro-paragraph p:first-of-type {
+      display: inline; }
   section#content section#introduction .flex-column {
     margin: 1.5em 0 1em;
     padding: 0 2em; }
@@ -69,11 +86,27 @@ section#content {
     section#content section#introduction .flex-column p:first-of-type {
       color: #555; }
   section#content section#introduction ol {
-    counter-reset: pseudo-ordered-list; }
+    counter-reset: pseudo-ordered-list;
+    padding: 0 0 0 10%;
+    -webkit-transition: padding 0.3s ease;
+    transition: padding 0.3s ease; }
+    @media only screen and (max-width: 800px) {
+      section#content section#introduction ol {
+        padding: 0 0 0 5%; } }
+    @media only screen and (max-width: 600px) {
+      section#content section#introduction ol {
+        padding: 0; } }
     section#content section#introduction ol li {
       list-style-type: none;
       position: relative;
-      margin-bottom: 1.2em; }
+      margin-bottom: 1.5em;
+      clear: both;
+      overflow: hidden; }
+      section#content section#introduction ol li p {
+        width: 60%; }
+        @media only screen and (max-width: 800px) {
+          section#content section#introduction ol li p {
+            width: 100%; } }
       section#content section#introduction ol li:before {
         border-radius: 20px;
         border: 1px solid #ddd;
@@ -88,6 +121,23 @@ section#content {
         text-align: center;
         top: 3px;
         width: 25px; }
+      section#content section#introduction ol li img {
+        float: right;
+        height: auto;
+        width: 30%;
+        margin-top: -10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        display: block;
+        -webkit-transition: width 0.3s ease;
+        transition: width 0.3s ease; }
+        @media only screen and (max-width: 800px) {
+          section#content section#introduction ol li img {
+            width: 40%; } }
+        @media only screen and (max-width: 600px) {
+          section#content section#introduction ol li img {
+            width: 100%;
+            margin: 0; } }
 
 .dot-container {
   position: relative; }
@@ -107,9 +157,10 @@ section#menu-bar {
   background: linear-gradient(90deg, #3e3e3e 0%, #454545 33%, #424242 90%, #404040 100%);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
   height: 100%;
+  overflow: hidden;
   position: fixed;
   top: 40px;
-  width: 160px;
+  width: 12%;
   z-index: 5; }
   section#menu-bar button {
     background-image: -webkit-radial-gradient(transparent, transparent);
@@ -119,6 +170,7 @@ section#menu-bar {
     display: block;
     font-size: 16px;
     padding: 20px 0;
+    position: relative;
     text-align: center;
     width: 100%; }
     section#menu-bar button i {
@@ -126,7 +178,24 @@ section#menu-bar {
       color: #666;
       display: block;
       font-size: 31px;
-      margin: 0 0 12px 0; }
+      margin: 4px 0 8px 0; }
+    section#menu-bar button .progress-bar {
+      -webkit-transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease;
+      background: #646464;
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0; }
+    section#menu-bar button .text {
+      white-space: nowrap;
+      -webkit-transition: opacity 0.15s ease, line-height 0.8s ease, height 0.8s ease;
+      transition: opacity 0.15s ease, line-height 0.8s ease, height 0.8s ease;
+      display: block; }
+    section#menu-bar button.text-overflow .text {
+      opacity: 0;
+      line-height: 0; }
     section#menu-bar button:hover, section#menu-bar button:focus {
       color: #ddd; }
       section#menu-bar button:hover i, section#menu-bar button:focus i {
@@ -137,13 +206,51 @@ section#menu-bar {
       color: #ccc; }
       section#menu-bar button.active i {
         color: #888; }
+      section#menu-bar button.active .progress-bar {
+        opacity: 1; }
 
 #menu-bar-shadow {
-  width: 165px;
+  width: 12.4%;
   height: 100%;
   background: #282828;
   position: fixed;
   z-index: 4; }
+
+.pannable:not(.active) {
+  opacity: 0; }
+
+.pannable-container {
+  overflow: hidden; }
+
+.pannable-thumbnail-container {
+  height: 100%;
+  float: right;
+  position: relative; }
+  .pannable-thumbnail-container .pannable-thumbnail {
+    height: 100%; }
+
+.pannable-large {
+  -webkit-transition: margin 0.5s ease;
+  transition: margin 0.5s ease; }
+
+.pannable-thumbnail-overlay {
+  position: absolute;
+  width: 100%; }
+  .pannable-thumbnail-overlay .pannable-cover {
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 100%;
+    -webkit-transition: height 0.2s ease;
+    transition: height 0.2s ease; }
+  .pannable-thumbnail-overlay .pannable-clear {
+    border: 2px solid black;
+    border-left: none;
+    border-right: none;
+    color: white;
+    text-align: center;
+    width: 100%; }
+  .pannable-thumbnail-overlay:hover {
+    cursor: move; }
 
 section#introduction img#bit-raj {
   display: block;
@@ -155,7 +262,7 @@ section#title-bar {
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   height: 39px;
-  padding: 1px 3% 0;
+  padding: 1px 5% 0;
   position: fixed;
   width: 100%;
   z-index: 10; }
@@ -170,17 +277,37 @@ section#title-bar {
     color: #ccc;
     background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.4));
     background-image: radial-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.4));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.23);
     border-radius: 4px;
-    padding: 3px 15px;
+    padding: 3px 15px 3px 45px;
+    position: relative;
     font-size: 18px;
     margin: 3px 0 0 0;
-    letter-spacing: 0.25px; }
+    letter-spacing: 0.25px;
+    -webkit-transition: color 0.3s ease, opacity 0.3s cubic-bezier(0.83, -1.6, 0.35, 1), background-image 0.3s ease;
+    transition: color 0.3s ease, opacity 0.3s cubic-bezier(0.83, -1.6, 0.35, 1), background-image 0.3s ease;
+    opacity: 0.9; }
     section#title-bar a.contact i {
       color: #999;
       font-size: 20px;
-      margin: 0 10px 0 0; }
+      position: absolute;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9);
+      transition: -webkit-transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9);
+      transition: transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9);
+      transition: transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9), -webkit-transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9);
+      left: 15px;
+      top: 5px; }
     section#title-bar a.contact:hover, section#title-bar a.contact:focus {
-      color: #fff; }
+      color: #d9d7d5;
+      background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.6));
+      background-image: radial-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.6));
+      opacity: 1; }
+    section#title-bar a.contact:hover i {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
 
 #title-bar-shadow {
   background: #414141;

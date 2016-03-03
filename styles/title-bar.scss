@@ -20,18 +20,34 @@ section#title-bar {
     float: right;
     color: #ccc;
     background-image: $contact-link-bg;
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    border-right: 1px solid rgba(255,255,255, 0.23);
     border-radius: 4px;
-    padding: 3px 15px;
+    padding: 3px 15px 3px 45px;
+    position: relative;
     font-size: 18px;
     margin: 3px 0 0 0;
     letter-spacing: 0.25px;
+    transition: color 0.3s ease, opacity 0.3s cubic-bezier(0.83,-1.6, 0.35, 1), background-image 0.3s ease; // background image radials aren't supported, but maybe one day...
+    opacity: 0.9;
     i {
       color: #999;
       font-size: 20px;
-      margin: 0 10px 0 0;
+      position: absolute;
+      transform: scale(1.0);
+      transition: transform 0.2s cubic-bezier(0.83,-1.6, 0.35, 2.9);
+      left: 15px;
+      top: 5px;
     }
     &:hover, &:focus {
-      color: #fff;
+      color: #d9d7d5;
+      background-image: $contact-link-bg-hover;
+      opacity: 1;
+    }
+    &:hover {
+      i {
+        transform: scale(1.1);
+      }
     }
   }
 }

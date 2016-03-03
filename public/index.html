@@ -26,12 +26,29 @@
 
   <section id="menu-bar">
     <nav id="menu">
-      <button type="button" data-target="introduction" class="active"><i class="fa fa-hand-spock-o"></i>Introduction</button>
-      <button type="button" data-target="web-design"><i class="fa fa-list-alt"></i>Web Design</button>
-      <button type="button" data-target="web-development"><i class="fa fa-code"></i>Web Development</button>
-      <button type="button" data-target="apps-software"><i class="fa fa-desktop"></i>Apps &amp; Software</button>
-      <!--<button type="button" data-target="software"><i class="fa fa-code"></i>App Development</button>-->
-      <button type="button" data-target="fun"><i class="fa fa-gamepad"></i>Fun &amp; Games</button>
+      <button type="button" data-target="introduction">
+        <i class="fa fa-hand-paper-o" style="transform: rotate(90deg)"></i>
+        <span class="text">Introduction</span>
+      </button>
+      <button type="button" data-target="web-design">
+        <i class="fa fa-list-alt"></i>
+        <span class="text">Web Design</span>
+      </button>
+      <button type="button" data-target="web-development">
+        <i class="fa fa-code"></i>
+        <span class="text">Web Development</span>
+      </button>
+      <!--
+      <button type="button" data-target="apps-software">
+        <i class="fa fa-desktop"></i>
+        <span class="text">Apps &amp; Software</span>
+      </button>
+      <button type="button" data-target="software"><i class="fa fa-code"></i>App Development</button>
+    -->
+      <button type="button" data-target="fun">
+        <i class="fa fa-gamepad"></i>
+        <span class="text">Fun &amp; Games</span>
+      </button>
     </nav>
   </section>
   <div id="menu-bar-shadow"></div>
@@ -63,62 +80,97 @@
           data-modifier="{ type: 'spiral', 'size': '10', 'origin': '20, 35', 'orbit': '22', 'color': 'rgba(246, 234, 151, 0.25)'}">
         </div>
       </div>
-      <h2>Hi. </h2><p>I'm Rajeev V. Singh, a web developer in the Boston metro area.</p>
-        <div class="flex-me">
-          <div class="flex-column">
-            <p><i>Here's what you need to know about me, in a nutshell:</i></p>
-            <ol>
-              <li>I am a <strong>designer</strong> as well as a <strong>developer</strong>, so I'm
-                just as comfortable in <strong>Photoshop</strong> or <strong>Illustrator</strong>
-                as I am in a text editor (currently enjoying <a href="https://atom.io/">Atom</a>) or
-                a terminal.</li>
-              <li>I love <strong>JavaScript</strong>. Consequently, I love modern JS-based tools
-                like <strong>Node.js</strong> and <strong>React.js</strong>. I'm also very much
-                at home using <strong>jQuery</strong>.</li>
-              <li>I have 6 years of experience writing themes and modules/plugins for <strong>Drupal</strong>
-                and <strong>WordPress</strong> in <strong>PHP</strong>.</li>
-              <li>I've written front-ends for <strong>Ruby on Rails</strong> from the ground up, using
-                React.js to provide a slick, modern user experience.</li>
-              <li>I prioritize <strong>web accessibility</strong>. I test my work with Apple VoiceOver, and
-                I include users of screen readers in UX tests.</li>
-              <li>I've worked with <strong>RESTful API's</strong>, writing code for clients
-                pulling data from social media networks, as well as for servers fulfilling requests.</li>
-              <li>I have worked in (and have fostered) an <strong>agile</strong> working environment, and I believe
-                that agile process management works. I do also think it's OK to adapt agile methods to suit
-                a team's strengths and weaknesses.</li>
-              <li>I am good with <strong>documentation</strong>. I use self-explanatory variable names,
-                inline comments, and Evernote notebooks to assist anyone that may need to understand or
-                modify my work.</li>
-            </ol>
-          </div>
-          <div class="flex-column">
-            <p><i>And here's what I'm looking for:</i></p>
-            <ol>
-              <li><strong>100% remote work.</strong> I respect the decision of employers that require office
-                time from their employees, but I believe that remote work is the best option for professionals
-                that are independently productive and vested in the quality of their work.</li>
-              <li><strong>Contract or part-time employment.</strong> I'm involved in several projects already
-                (some of them my own endeavors), so I don't feel that full-time employment is a good fit for
-                at the moment.</li>
-              <li><strong>Work that resonates with me.</strong> If you represent a <strong>non-profit</strong>,
-                or if your work is related to <strong>music</strong>, <strong>3D printing</strong>,
-                <strong>microchips/IoT</strong> (I use the
-                <a href="https://www.pjrc.com/teensy/">Teensy</a>), or
-                <strong>casual games</strong>, then I'd like to hear from you.</li>
-              <li><strong>Great written communication.</strong> I believe that the key to a great,
-                smoothly executed project is in excellent written communication amongst all parties involved.</li>
-            </ol>
-          </div>
+        <div class="intro-paragraph block">
+          <h2>Hi. </h2><p>I'm Raj, a coder and designer living in the Boston metro area.
+          I'm looking for contract or part-time work that is 100% remote. If you represent a non-profit,
+            or if your work is related to music, 3D printing, microchips/IoT (I use
+            the <a href="https://www.pjrc.com/teensy/">Teensy</a>), or casual games, then I'd especially
+            like to <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">hear from you</a>. This is what I offer: </p>
         </div>
-        <p>Interested? Drop me an <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">email</a> and let's
-          chat!</p>
+        <div class="content-block block">
 
+          <ol class="indent">
+            <li>
+              <h3>Code and Design</h3>
+              <img src="images/illustration-code.png" alt="" />
+              <p>While I usually find myself employed as a front-end developer, I'm almost always utilized for
+                back-end coding and design work as well. I'm known for being just as comfortable in Photoshop
+                and Illustrator as I am in a text editor (currently enjoying <a href="https://atom.io/">Atom</a>)
+                or a terminal.
+              </p>
+            </li>
+            <li>
+              <h3>JavaScript Wizardry</h3>
+              <img src="images/illustration-javascript.png" alt="" />
+              <p>With the rising popularity of Node.js, JavaScript is poised to be one of the most pervasive and flexible
+                languages in use. It can be used to build web back-ends (Node.js), data-binding front-ends (React.js,
+                Socket.io, etc.), cross-platform desktop apps (NW.js), and mobile devices (Cordova and JXCore).
 
+              </p>
+            </li>
+            <li>
+              <h3>CMS Theming and Module Development</h3>
+              <img src="images/illustration-drupal.png" alt="" />
+               <p>I first began working with WordPress while working for an ad agency. It was easy to
+                 install, easy for clients to learn, and easy to modify. As the scope of my projects became
+                 more complex and as the organizations I worked for became
+                 larger and more complex as well, I began working with Drupal. I've since spent years
+                 writing themes (parent and child) and modules for Drupal.
+              </p>
+            </li>
+            <li>
+              <h3>Ruby on Rails Front-end Development</h3>
+              <img src="images/illustration-rails.png" alt="" />
+               <p>While I'm not a Rails expert, I've had the opportunity to work on several large Rails
+                 projects. Most recently, I designed and developed a complex front-end for Rails from the ground
+                 up using React.js.
+               </p>
+            </li>
+            <li>
+              <h3>Web Accessibility</h3>
+              <img src="images/illustration-accessibility.png" alt="" />
+              <p>I believe that the web is for everyone, and everyone benefits from a more accessible
+                web. Changes to the web that benefit accessibility almost always have other
+                benefits. Content that can be read by screen readers to the visually impaired can also
+                be read by Siri to someone driving to work in the morning, for example. I test my work with Apple VoiceOver before
+                publishing and I include users of screen readers in UX tests when possible. </p>
+            </li>
+            <li>
+              <h3>Custom API interactions</h3>
+              <img src="images/illustration-api.png" alt="" />
+              <p>It's hard to get very far into web development without having to interact with third-party
+                data providers. I specialize in the custom development of tools/plugins/modules
+                that push and pull data from Facebook, Instagram, Twitter, Vimeo, Flickr, and Google Maps.
+                I've also set up server-side APIs in Drupal and Rails so that those sites can fulfill client requests.</p>
+            </li>
+            <li>
+              <h3>An Agile Approach</h3>
+              <img src="images/illustration-agile.png" alt="" />
+              <p>I was first introduced to agile management in 2012, and I've since adopted the agile philosophy for
+                virtually everything. I've used it on team projects that I've led, I've pushed for it to be adopted
+                by teams that I've worked on (and succeeded), and I even use it on my personal projects.</p>
+            </li>
+            <li>
+              <h3>Robust documentation.</h3>
+              <img src="images/illustration-documentation.png" alt="" />
+              <p>Code isn't worth much if it can't be understood and modified by other programmers. As a consequence,
+                I use self-explanatory variable names and include comments in my code, and for larger
+                projects, I write and organize separate documentation <em>simulateously as I code</em>. There, I
+                cover the things that don't fit into code comments: Why I made certain decisions, how future
+                modifications can be made, and where things can be found in the code.</p>
+            </li>
+          </ol>
+        </div>
+        <p class="block">Interested? Drop me an <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">email</a> and let's
+          chat!
+        </p>
     </section>
     <section id="web-design">
       <h2>Berklee College of Music Homepage</h2>
-      <div class="pannable" data-width="80%" data-height="300px" data-scale="full-horizontal">
-        <img src="images/screenshots/berklee homepage-feb-12-2016.png" />
+      <img src="images/screenshots/berklee homepage-feb-12-2016.png"
+           class="pannable"
+           data-height="300px">
+        <img  />
       </div>
       <p>In 2014, Berklee was faced with an all-too-common issue amongst colleges.
         They had too much to say and too little space to say it on their existing homepage.
@@ -128,18 +180,21 @@
       </p>
     </section>
 
-    <section id="web-dev">
+    <section id="web-development">
     </section>
 
-    <section id="software-ui">
+    <section id="apps-software">
     </section>
 
     <section id="fun">
     </section>
   </section>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="scripts/easter-eggs.js"></script>
+  <script src="scripts/main-nav.js"></script>
+  <script src="scripts/pannable.js"></script>
 </body>
 
 </html>

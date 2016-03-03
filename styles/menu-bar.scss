@@ -2,9 +2,10 @@ section#menu-bar {
   background: $menu-bar-bg;
   box-shadow: 0 2px 3px $bar-shadow-color;
   height: 100%;
+  overflow: hidden;
   position: fixed;
   top: 40px;
-  width: 160px;
+  width: $menu-width;
   z-index: 5;
 
   button {
@@ -14,6 +15,7 @@ section#menu-bar {
     display: block;
     font-size: 16px;
     padding: 20px 0;
+    position: relative;
     text-align: center;
     width: 100%;
 
@@ -23,7 +25,25 @@ section#menu-bar {
       color: #666;
       display: block;
       font-size: 31px;
-      margin: 0 0 12px 0;
+      margin: 4px 0 8px 0;
+    }
+    .progress-bar {
+      transition: opacity 0.5s ease;
+      background: rgba(100,100,100,1);
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .text {
+      white-space: nowrap;
+      transition: opacity 0.15s ease, line-height 0.8s ease, height 0.8s ease;
+      display: block;
+    }
+    &.text-overflow .text {
+      opacity: 0;
+      line-height: 0;
     }
 
     // states
@@ -39,11 +59,14 @@ section#menu-bar {
       i {
         color: #888;
       }
+      .progress-bar {
+        opacity: 1;
+      }
     }
   }
 }
 #menu-bar-shadow {
-  width: 165px;
+  width: $menu-width + $menu-shadow-width;
   height: 100%;
   background: $menu-bar-accent;
   position: fixed;
