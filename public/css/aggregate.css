@@ -29,6 +29,12 @@ a {
   a:hover, a:focus {
     color: #f05a32; }
 
+hr {
+  background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 7px, #ccc 7px, #ccc 18px);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, #ccc 7px, #ccc 18px);
+  height: 10px;
+  border: none; }
+
 button {
   background: none;
   border: none;
@@ -56,58 +62,34 @@ section#content {
   padding: 46px 0 0 12.4%;
   font-size: 19px;
   line-height: 175%; }
+  section#content h2 {
+    font-size: 40px;
+    color: #333;
+    border-bottom: 3px dotted rgba(0, 0, 0, 0.09);
+    display: inline; }
+  section#content h3 {
+    font-size: 21pt;
+    margin-bottom: 0.25em; }
   section#content p {
     padding: 0 5% 0 0; }
   section#content a {
     border-bottom: 1px dotted #ccc; }
-  section#content section {
-    margin: 3em 0 1em;
-    padding: 0 5% 2em;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-    clear: both; }
-    section#content section .block {
-      display: block; }
-    section#content section img {
-      max-width: 100%; }
-  section#content section#introduction h2 {
-    display: inline;
-    color: #aaa; }
-  section#content section#introduction h3 {
-    font-size: 21pt; }
-  section#content section#introduction .intro-paragraph {
-    color: #5c5c5c; }
-    section#content section#introduction .intro-paragraph p:first-of-type {
-      display: inline; }
-  section#content section#introduction .flex-column {
-    margin: 1.5em 0 1em;
-    padding: 0 2em; }
-    section#content section#introduction .flex-column:not(:last-child) {
-      border-right: 1px dashed #ccd; }
-    section#content section#introduction .flex-column p:first-of-type {
-      color: #555; }
-  section#content section#introduction ol {
+  section#content ol {
     counter-reset: pseudo-ordered-list;
     padding: 0 0 0 10%;
     -webkit-transition: padding 0.3s ease;
     transition: padding 0.3s ease; }
-    @media only screen and (max-width: 800px) {
-      section#content section#introduction ol {
-        padding: 0 0 0 5%; } }
-    @media only screen and (max-width: 600px) {
-      section#content section#introduction ol {
-        padding: 0; } }
-    section#content section#introduction ol li {
+    section#content ol li {
       list-style-type: none;
       position: relative;
       margin-bottom: 1.5em;
-      clear: both;
-      overflow: hidden; }
-      section#content section#introduction ol li p {
+      clear: both; }
+      section#content ol li p {
         width: 60%; }
         @media only screen and (max-width: 800px) {
-          section#content section#introduction ol li p {
+          section#content ol li p {
             width: 100%; } }
-      section#content section#introduction ol li:before {
+      section#content ol li:before {
         border-radius: 20px;
         border: 1px solid #ddd;
         color: #666;
@@ -121,7 +103,7 @@ section#content {
         text-align: center;
         top: 3px;
         width: 25px; }
-      section#content section#introduction ol li img {
+      section#content ol li img {
         float: right;
         height: auto;
         width: 30%;
@@ -132,12 +114,21 @@ section#content {
         -webkit-transition: width 0.3s ease;
         transition: width 0.3s ease; }
         @media only screen and (max-width: 800px) {
-          section#content section#introduction ol li img {
+          section#content ol li img {
             width: 40%; } }
         @media only screen and (max-width: 600px) {
-          section#content section#introduction ol li img {
+          section#content ol li img {
             width: 100%;
             margin: 0; } }
+  section#content section {
+    margin: 3em 0 1em;
+    padding: 0 5% 2em;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.1);
+    clear: both; }
+    section#content section .block {
+      display: block; }
+    section#content section img {
+      max-width: 100%; }
 
 .dot-container {
   position: relative; }
@@ -220,7 +211,17 @@ section#menu-bar {
   opacity: 0; }
 
 .pannable-container {
+  background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.05) 3px, rgba(0, 0, 0, 0.05) 8px);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.05) 3px, rgba(0, 0, 0, 0.05) 8px);
+  border: 1px solid #ddd;
   overflow: hidden; }
+  .pannable-container.small-ratio {
+    height: auto; }
+    .pannable-container.small-ratio .pannable-thumbnail-container {
+      display: none; }
+    .pannable-container.small-ratio .pannable-large {
+      width: 100%;
+      height: auto; }
 
 .pannable-thumbnail-container {
   height: 100%;
@@ -231,7 +232,8 @@ section#menu-bar {
 
 .pannable-large {
   -webkit-transition: margin 0.5s ease;
-  transition: margin 0.5s ease; }
+  transition: margin 0.5s ease;
+  border-right: 1px solid #ddd; }
 
 .pannable-thumbnail-overlay {
   position: absolute;
@@ -243,19 +245,47 @@ section#menu-bar {
     -webkit-transition: height 0.2s ease;
     transition: height 0.2s ease; }
   .pannable-thumbnail-overlay .pannable-clear {
-    border: 2px solid black;
-    border-left: none;
-    border-right: none;
+    border: 1px solid rgba(250, 250, 250, 0.4);
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
     width: 100%; }
   .pannable-thumbnail-overlay:hover {
     cursor: move; }
 
-section#introduction img#bit-raj {
-  display: block;
-  height: 400px;
-  float: left; }
+section#introduction h2 {
+  display: inline;
+  color: #aaa;
+  border: none;
+  font-size: 28px; }
+
+section#introduction h3 {
+  margin-bottom: 1em; }
+
+@media only screen and (max-width: 800px) {
+  section#introduction ol {
+    padding: 0 0 0 5%; } }
+
+@media only screen and (max-width: 600px) {
+  section#introduction ol {
+    padding: 0; } }
+
+section#introduction ol li {
+  overflow: hidden; }
+
+section#introduction .intro-paragraph {
+  color: #5c5c5c; }
+  section#introduction .intro-paragraph p:first-of-type {
+    display: inline; }
+
+section#introduction .flex-column {
+  margin: 1.5em 0 1em;
+  padding: 0 2em; }
+  section#introduction .flex-column:not(:last-child) {
+    border-right: 1px dashed #ccd; }
+  section#introduction .flex-column p:first-of-type {
+    color: #555; }
 
 section#title-bar {
   background: #4d4d4d;
@@ -300,6 +330,18 @@ section#title-bar {
       transition: transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9), -webkit-transform 0.2s cubic-bezier(0.83, -1.6, 0.35, 2.9);
       left: 15px;
       top: 5px; }
+    section#title-bar a.contact span.text {
+      -webkit-transition: max-width 0.6s ease, opacity 0.2s ease;
+      transition: max-width 0.6s ease, opacity 0.2s ease;
+      display: block;
+      max-width: 100px; }
+    @media only screen and (max-width: 600px) {
+      section#title-bar a.contact {
+        padding-right: 5px; }
+        section#title-bar a.contact span.text {
+          display: block;
+          opacity: 0;
+          max-width: 0; } }
     section#title-bar a.contact:hover, section#title-bar a.contact:focus {
       color: #d9d7d5;
       background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.6));

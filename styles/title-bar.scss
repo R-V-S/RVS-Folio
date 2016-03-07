@@ -39,6 +39,20 @@ section#title-bar {
       left: 15px;
       top: 5px;
     }
+    span.text {
+      transition: max-width 0.6s ease, opacity 0.2s ease;
+      display: block;
+      max-width: 100px;
+    }
+
+    @media #{$small} {
+      padding-right: 5px;
+      span.text {
+        display: block;
+        opacity: 0;
+        max-width: 0;
+      }
+    }
     &:hover, &:focus {
       color: #d9d7d5;
       background-image: $contact-link-bg-hover;

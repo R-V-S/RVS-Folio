@@ -3,7 +3,21 @@
 }
 
 .pannable-container {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(0,0,0,0.05) 3px, rgba(0,0,0,0.05) 8px);
+  border: 1px solid #ddd;
   overflow: hidden;
+
+  &.small-ratio {
+    height: auto;
+    .pannable-thumbnail-container {
+      display: none;
+
+    }
+    .pannable-large {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .pannable-thumbnail-container {
@@ -17,6 +31,7 @@
 
 .pannable-large {
   transition: margin 0.5s ease;
+  border-right: 1px solid #ddd;
 }
 
 .pannable-thumbnail-overlay {
@@ -29,11 +44,11 @@
     transition: height 0.2s ease;
   }
   .pannable-clear {
-    border: 2px solid black;
-    border-left: none;
-    border-right: none;
+    border: 1px solid rgba(250,250,250,0.4);
+    box-shadow: inset 0 0 7px rgba(0,0,0,0.5);
     color: white;
     text-align: center;
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.4);
     width: 100%;
   }
 

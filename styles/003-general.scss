@@ -28,13 +28,19 @@ h1,h2,h3,h4,h5,h6 {
 a {
   text-decoration: none;
   transition: color 0.33s ease, opacity 0.3s ease;
-  
+
   &, &:visited {
     color: rgb(200,70,30);
   }
   &:hover, &:focus {
     color: rgb(240,90,50);
   }
+}
+
+hr {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, #ccc 7px, #ccc 18px);
+  height: 10px;
+  border: none;
 }
 
 button {

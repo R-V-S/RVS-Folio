@@ -54,35 +54,22 @@ $(window).load(function() {
       large.css('marginTop', '-' + largeOffset + 'px')
     })
 
-    /*
-    large.mousedown(function(e) {
-      dragging = true
-    })
-    large.mouseup(function(e) {
-      dragging = false
-      lastDragPosition = false
-    })
-    large.mousemove(function(e) {
-      if (dragging) {
-        var currentDragPosition = e.pageY - $(this).offset().top
-        if (!lastDragPosition) {
-          lastDragPosition = currentDragPosition
-          return false
-        }
-        var dragChange = (currentDragPosition - lastDragPosition) * 50
-        var currentMarginTop = large.css('marginTop').replace('px','')
-        var newMarginTop = currentMarginTop - dragChange
-        newMarginTop = Math.max(-large.height() + containerHeight, Math.min( 0, newMarginTop) )
-        large.css('marginTop', newMarginTop + 'px')
-        lastDragPosition = currentDragPosition
-      }
-    })
-    */
-    
     function windowSizeUpdate() {
+      large.css('marginTop', 0)
+      thumbnailOverlayAbove.height(0)
+      // If the ratio is very small, it means that the panning isn't
+      // accomplishing very much, so add a CSS class and remove the 'width'
+      // element style so that the class can determine the width
+      if (container.width() < 600) {
+        container.addClass('small-ratio').height('auto')
+        large.width('')
+        return true
+      } else if( container.hasClass('small-ratio') ) {
+        container.removeClass('small-ratio').height( containerHeight )
+      }
       var largeWidth = parseInt(container.width() - (thumbnail.width() * 1.3) )
-      large.width( largeWidth )
-      visibleRatio = largeWidth / containerHeight.replace('px', '')
+      visibleRatio = largeWidth / containerHeight
+      large.width(largeWidth)
       thumbnailVisibleHeight = parseInt(thumbnail.width() / visibleRatio)
       thumbnailOverlayMiddle
         .height( thumbnailVisibleHeight + 'px')
