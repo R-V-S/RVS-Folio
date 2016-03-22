@@ -13,16 +13,7 @@ $(document).ready(function() {
   if (console) {
     console.log('Hi!')
   }
-  // scrollTargets stores the ID and relative height for each section targetted
-  // by a menu item.
-  var scrollTargets = {}
-  // scrollTargetsSortedKeys stores the keys for scrollTargets sorted by
-  // numeric value. It addresses the fact that we can't rely on the
-  // sorted order of an object. Likewise, we don't want to sort the target
-  // keys on every scroll event.
-  var scrollTargetsSortedKeys = []
-  // windowHeight cached for speed. It's updated on window resize (I hate
-  // hate HATE a laggy scroll).
+  // windowHeight cached for speed.
   var windowHeight = parseInt( $(window).height() )
   // An offset that accounts for the fixed header
   var topOffset = parseInt( $('#title-bar').height() )
@@ -59,31 +50,16 @@ $(document).ready(function() {
   function windowSizeUpdate() {
     windowHeight = parseInt( $(window).height() )
     topOffset = parseInt( $('#title-bar').height() ) + topMargin
-    scrollTargets = {}
+
+    // Check for overflows and hide text if any are detected
     var overflowFound = false
     menuSelections.each(function() {
-      // Store sections and their positions (top offsets) in var scrollTargets
-      var id = $(this).data('target')
-      var section = $('#' + id)
-      if (!section.length) {
-        return false
-      }
-      var position = parseInt( section.offset().top )
-      scrollTargets[id] = position
-
-      // Check for overflows and hide text if any are detected
       var minWidth = $('.text', this).innerWidth() * 1.25
       var parentWidth = $(this).width()
       if ( !overflowFound && minWidth > parentWidth) {
         overflowFound = true
       }
     })
-
-    // Store a sorted array of the scroll targets
-    scrollTargetsSortedKeys = Object.keys(scrollTargets).sort(function(a,b) {
-      return scrollTargets[a] - scrollTargets[b]
-    })
-
     if (overflowFound === false) {
       menuSelections.removeClass('text-overflow')
     } else {
@@ -95,20 +71,34 @@ $(document).ready(function() {
   function scrollUpdate() {
     // get the position of the scrollbar relative to the top of the visible area
     var scrollPosition = $(document).scrollTop() + topOffset
-    // fall back on the top-most section
-    var newSection = scrollTargetsSortedKeys[0]
-    var nextSection = false
-    // loop through scroll targets in order until I find one whose value is
-    // greater than the scroll position.
-    for (var i=0; i<scrollTargetsSortedKeys.length; i++) {
-      var id = scrollTargetsSortedKeys[i]
-      if (scrollTargets[id] > scrollPosition) {
-        nextSection = id
-        break;
-      } else {
-        newSection = id
+    // fall back on the first menu item's target section
+    var newSection = menuSelections.first().data('target')
+    // the floor is the beginning of the currently visible section
+    var floor = $('#'+newSection).offset().top
+    // the ceiling is the end of the currently visible section (which
+    // is either the beginning of the next currently visible section or the
+    // end of the document
+    var ceiling = 1000000
+    // loop through menu item targets and establish (1) which section is
+    // within the range of the scroll position, (2) what the floor and
+    // ceiling variable values are
+    menuSelections.each(function() {
+      var targetId = $(this).data('target')
+      var targetElement = $('#'+targetId)
+      if (!targetElement.length) {
+        return false
       }
-    }
+      var targetPosition = targetElement.offset().top - 10
+      if (scrollPosition > targetPosition && targetPosition > floor) {
+        floor = targetPosition
+        newSection = targetId
+      }
+      if (scrollPosition < targetPosition && targetPosition < ceiling) {
+        ceiling = targetPosition
+      }
+    })
+    console.log(floor)
+    console.log(newSection)
     if (newSection !== activeSection) {
       if (activeSection) {
         menuSelections.filter('[data-target="'+activeSection+'"]').removeClass('active')
@@ -120,9 +110,7 @@ $(document).ready(function() {
 
     // Update the progress bar that runs across the bottom of the active button
     if (activeElement) {
-      var floor = scrollTargets[newSection]
-      var ceiling = scrollTargets[nextSection]
-      if (!ceiling) {
+      if (ceiling === 1000000) {
         ceiling = $('body').height() - $(window).height()
       }
       var progress = (scrollPosition - floor) / (ceiling - floor)
