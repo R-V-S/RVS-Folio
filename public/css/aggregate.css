@@ -136,6 +136,7 @@ section#content {
     section#content section:last-child {
       margin-top: -2em;
       margin-bottom: -2em;
+      margin-left: -1em;
       padding: 1em; }
     section#content section .block {
       display: block; }
