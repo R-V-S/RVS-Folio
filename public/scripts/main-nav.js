@@ -46,8 +46,8 @@ $(document).ready(function() {
     initialize()
   })
 
-  // Identify the sections that will trigger menu bar updates on scroll and
-  // (re)create the scrollTargets object.
+  // Update variables that might have changed and check for text overflow
+  // in the menu bar
   function windowSizeUpdate() {
     windowHeight = parseInt( $(window).height() )
     topOffset = parseInt( $('#title-bar').height() ) + topMargin
@@ -71,7 +71,7 @@ $(document).ready(function() {
   // Update the menu to reflect the section that's currently visible
   function scrollUpdate() {
     // get the position of the scrollbar relative to the top of the visible area
-    var scrollPosition = $(document).scrollTop() + topOffset
+    var scrollPosition = $('#content').scrollTop() + topOffset
     // fall back on the first menu item's target section
     var newSection = menuSelections.first().data('target')
     // the floor is the beginning of the currently visible section
@@ -89,7 +89,7 @@ $(document).ready(function() {
       if (!targetElement.length) {
         return false
       }
-      var targetPosition = targetElement.offset().top - 10
+      var targetPosition = targetElement.offset().top + $('#content').scrollTop() - 10
       if (scrollPosition > targetPosition && targetPosition > floor) {
         floor = targetPosition
         newSection = targetId
@@ -110,7 +110,7 @@ $(document).ready(function() {
     // Update the progress bar that runs across the bottom of the active button
     if (activeElement) {
       if (ceiling === 1000000) {
-        ceiling = $('#content').height() - $(window).height()
+        ceiling = $('#content')[0].scrollHeight - $(window).height()
       }
       var progress = (scrollPosition - floor) / (ceiling - floor)
       var progressBarWidth = activeElement.width() * progress
@@ -143,8 +143,8 @@ $(document).ready(function() {
     if (id === 'contact') {
       $('a#contact-link').get(0).click()
     } else {
-      var targetPosition = Math.max(0, $('#'+id).offset().top - topOffset)
-      $('html, body').animate( {scrollTop: targetPosition + 'px'}, 500, 'easeOutCirc')
+      var targetPosition = Math.max(0, $('#'+id).offset().top + $('#content').scrollTop() - topOffset)
+      $('#content').animate( {scrollTop: targetPosition + 'px'}, 500, 'easeOutCirc')
     }
   })
 
@@ -156,7 +156,7 @@ $(document).ready(function() {
     }
   })
 
-  $(window).scroll(function() {
+  $('#content').scroll(function() {
     if (!scrollUpdateTimer) {
       scrollUpdateTimer = setTimeout(scrollUpdate, 20)
     }
