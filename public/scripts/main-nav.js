@@ -7,7 +7,7 @@ to the user.
 
 // TODO: Update the URL using history pushstate.
 
-$(window).load(function() {
+$(document).ready(function() {
   'use strict'
 
   if (console) {
@@ -50,6 +50,9 @@ $(window).load(function() {
     resizeTimer = false
   }
   initialize()
+  $(window).ready(function() {
+    initialize()
+  })
 
   // Identify the sections that will trigger menu bar updates on scroll and
   // (re)create the scrollTargets object.

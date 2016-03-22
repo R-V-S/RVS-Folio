@@ -6,7 +6,7 @@ are laid over the thumbnail image. One above the visible slice and one below the
 visible slice. The visible slice moves up and down when the user drags their
 mouse over the thumbnail image.
 */
-$(window).load(function() {
+$(document).ready(function() {
   'use strict'
 
   $('img.pannable').each(function() {
