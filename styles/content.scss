@@ -6,6 +6,8 @@ section#content {
   animation: fade-in-animation 0.3s 1s ease forwards;
   opacity: 0;
   -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow: scroll;
 
   h2 {
     font-size: 40px;

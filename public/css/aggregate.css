@@ -82,7 +82,9 @@ section#content {
   -webkit-animation: fade-in-animation 0.3s 1s ease forwards;
           animation: fade-in-animation 0.3s 1s ease forwards;
   opacity: 0;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow: scroll; }
   section#content h2 {
     font-size: 40px;
     color: #333;
@@ -209,7 +211,6 @@ section#menu-bar {
   height: 100%;
   overflow: hidden;
   position: fixed;
-  position: -webkit-sticky;
   top: 40px;
   width: 12%;
   margin-left: -12%;
@@ -277,7 +278,6 @@ section#menu-bar {
   height: 100%;
   background: #282828;
   position: fixed;
-  position: -webkit-sticky;
   z-index: 4; }
 
 @-webkit-keyframes slide-from-left {
@@ -398,7 +398,6 @@ section#title-bar {
   height: 39px;
   padding: 1px 5% 0;
   position: fixed;
-  position: -webkit-sticky;
   width: 100%;
   z-index: 10;
   -webkit-animation: slide-from-top 0.3s 0.5s ease forwards;
@@ -464,7 +463,6 @@ section#title-bar {
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.3);
   height: 45px;
   position: fixed;
-  position: -webkit-sticky;
   width: 100%;
   z-index: 9;
   -webkit-animation: slide-from-top 0.4s 0.4s ease forwards;

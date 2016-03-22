@@ -4,7 +4,6 @@ section#menu-bar {
   height: 100%;
   overflow: hidden;
   position: fixed;
-  position: -webkit-sticky;
   top: 40px;
   width: $menu-width;
   margin-left: -$menu-width;
@@ -83,7 +82,6 @@ section#menu-bar {
   height: 100%;
   background: $menu-bar-accent;
   position: fixed;
-  position: -webkit-sticky;
   z-index: 4;
 }
 
