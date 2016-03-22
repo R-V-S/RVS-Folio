@@ -5,7 +5,8 @@ html, body {
   background: url(../images/bgnoise-01.png) repeat;
   -webkit-transition: color 0.33s ease, opacity 0.3s ease;
   transition: color 0.33s ease, opacity 0.3s ease;
-  color: #3a3a3f; }
+  color: #3a3a3f;
+  height: 100%; }
 
 html {
   opacity: 0; }
@@ -80,7 +81,8 @@ section#content {
   line-height: 175%;
   -webkit-animation: fade-in-animation 0.3s 1s ease forwards;
           animation: fade-in-animation 0.3s 1s ease forwards;
-  opacity: 0; }
+  opacity: 0;
+  -webkit-overflow-scrolling: touch; }
   section#content h2 {
     font-size: 40px;
     color: #333;

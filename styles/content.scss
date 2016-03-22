@@ -5,6 +5,7 @@ section#content {
   line-height: 175%;
   animation: fade-in-animation 0.3s 1s ease forwards;
   opacity: 0;
+  -webkit-overflow-scrolling: touch;
 
   h2 {
     font-size: 40px;
