@@ -8,7 +8,7 @@ section#content {
   opacity: 0;
   -webkit-overflow-scrolling: touch;
   height: 100%;
-  height: calc(100% - 46px - #{$menu-width + $menu-shadow-width} );
+  height: calc(100% - 46px );
   overflow: scroll;
 
   h2 {
@@ -73,7 +73,9 @@ section#content {
     border-bottom: 10px solid rgba(0,0,0,0.1);
     clear: both;
     &:last-child {
-      margin-bottom: 0;
+      margin-top: -2em;
+      margin-bottom: -2em;
+      padding: 1em;
     }
 
     .block {

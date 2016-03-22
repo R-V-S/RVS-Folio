@@ -85,7 +85,7 @@ section#content {
   opacity: 0;
   -webkit-overflow-scrolling: touch;
   height: 100%;
-  height: calc(100% - 46px - 12.4%);
+  height: calc(100% - 46px);
   overflow: scroll; }
   section#content h2 {
     font-size: 40px;
@@ -134,7 +134,9 @@ section#content {
     border-bottom: 10px solid rgba(0, 0, 0, 0.1);
     clear: both; }
     section#content section:last-child {
-      margin-bottom: 0; }
+      margin-top: -2em;
+      margin-bottom: -2em;
+      padding: 1em; }
     section#content section .block {
       display: block; }
     section#content section img {
