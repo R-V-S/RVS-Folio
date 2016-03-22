@@ -82,5 +82,9 @@ $(document).ready(function() {
     })
 
     windowSizeUpdate()
+
+    $(this).load(function() {
+      windowSizeUpdate()
+    })
   })
 })
