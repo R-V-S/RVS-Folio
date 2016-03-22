@@ -32,6 +32,7 @@ section#content {
   ol {
     counter-reset: pseudo-ordered-list;
     transition: padding 0.3s ease;
+    padding-left: 45px;
 
     li {
       list-style-type: none;
@@ -57,7 +58,7 @@ section#content {
         font-size: 19px;
         font-weight: bold;
         height: 25px;
-        left: -1.75em;
+        left: -37px;
         line-height: 132%;
         position: absolute;
         text-align: center;

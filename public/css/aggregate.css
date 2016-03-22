@@ -103,7 +103,8 @@ section#content {
   section#content ol {
     counter-reset: pseudo-ordered-list;
     -webkit-transition: padding 0.3s ease;
-    transition: padding 0.3s ease; }
+    transition: padding 0.3s ease;
+    padding-left: 45px; }
     section#content ol li {
       list-style-type: none;
       position: relative;
@@ -123,7 +124,7 @@ section#content {
         font-size: 19px;
         font-weight: bold;
         height: 25px;
-        left: -1.75em;
+        left: -37px;
         line-height: 132%;
         position: absolute;
         text-align: center;
