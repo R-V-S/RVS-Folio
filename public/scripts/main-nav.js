@@ -112,7 +112,7 @@ $(document).ready(function() {
       if (ceiling === 1000000) {
         ceiling = $('#content')[0].scrollHeight - $(window).height()
       }
-      var progress = (scrollPosition - floor) / (ceiling - floor)
+      var progress = (Math.max(0,scrollPosition) - floor) / (ceiling - floor)
       var progressBarWidth = activeElement.width() * progress
       $('.progress-bar', activeElement).width(progressBarWidth)
     }
