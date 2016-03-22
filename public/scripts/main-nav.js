@@ -154,7 +154,7 @@ $(document).ready(function() {
     if (id === 'contact') {
       $('a#contact-link').get(0).click()
     } else {
-      var targetPosition = Math.max(0, scrollTargets[id] - topOffset)
+      var targetPosition = Math.max(0, $('#'+id).offset().top - topOffset)
       $('html, body').animate( {scrollTop: targetPosition + 'px'}, 500, 'easeOutCirc')
     }
   })
