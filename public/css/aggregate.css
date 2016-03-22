@@ -84,6 +84,7 @@ section#content {
   opacity: 0;
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  height: calc(100% - 46px - 12.4%);
   overflow: scroll; }
   section#content h2 {
     font-size: 40px;

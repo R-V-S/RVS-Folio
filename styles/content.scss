@@ -1,4 +1,5 @@
 section#content {
+
   padding: 46px 0 0 ($menu-width + $menu-shadow-width);
 
   font-size: 19px;
@@ -7,6 +8,7 @@ section#content {
   opacity: 0;
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  height: calc(100% - 46px - #{$menu-width + $menu-shadow-width} );
   overflow: scroll;
 
   h2 {
