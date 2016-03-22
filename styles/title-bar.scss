@@ -7,7 +7,7 @@ section#title-bar {
   height: $title-bar-height;
   padding: 1px $page-indent 0;
   position: fixed;
-  -webkit-position: sticky;
+  position: -webkit-sticky;
   width: 100%;
   z-index: 10;
   animation: slide-from-top 0.3s 0.5s ease forwards;
@@ -75,7 +75,7 @@ section#title-bar {
   box-shadow: 2px 0 3px $bar-shadow-color;
   height: 45px;
   position: fixed;
-  -webkit-position: sticky;
+  position: -webkit-sticky;
   width: 100%;
   z-index: 9;
   animation: slide-from-top 0.4s 0.4s ease forwards;

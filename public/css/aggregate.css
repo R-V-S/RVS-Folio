@@ -207,7 +207,7 @@ section#menu-bar {
   height: 100%;
   overflow: hidden;
   position: fixed;
-  -webkit-position: -webkit-sticky;
+  position: -webkit-sticky;
   top: 40px;
   width: 12%;
   margin-left: -12%;
@@ -275,7 +275,7 @@ section#menu-bar {
   height: 100%;
   background: #282828;
   position: fixed;
-  -webkit-position: -webkit-sticky;
+  position: -webkit-sticky;
   z-index: 4; }
 
 @-webkit-keyframes slide-from-left {
@@ -396,7 +396,7 @@ section#title-bar {
   height: 39px;
   padding: 1px 5% 0;
   position: fixed;
-  -webkit-position: -webkit-sticky;
+  position: -webkit-sticky;
   width: 100%;
   z-index: 10;
   -webkit-animation: slide-from-top 0.3s 0.5s ease forwards;
@@ -462,7 +462,7 @@ section#title-bar {
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.3);
   height: 45px;
   position: fixed;
-  -webkit-position: -webkit-sticky;
+  position: -webkit-sticky;
   width: 100%;
   z-index: 9;
   -webkit-animation: slide-from-top 0.4s 0.4s ease forwards;
