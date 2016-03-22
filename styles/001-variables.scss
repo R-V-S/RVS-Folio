@@ -14,7 +14,7 @@ $menu-shadow-width: 0.4%;
 
 // colors
 $background: #fff;
-
+$texture: url(../images/bgnoise-01.png);
 $light-gray: #4d4d4d;
 $light-gray-shadow: #414141;
 $dark-gray: #333;
@@ -29,7 +29,7 @@ $title-bar-bg: $light-gray;
 $title-accent: $light-gray-shadow;
 
 //$menu-bar-bg: linear-gradient(90deg, #3e3e3e 0%, #454545 33%, #424242 90%, #404040 100%);
-$menu-bar-bg: linear-gradient(90deg, #444, #555);
+$menu-bar-bg: #444;
 $menu-bar-accent: $dark-gray-shadow;
 
 
