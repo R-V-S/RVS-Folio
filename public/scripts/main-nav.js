@@ -10,6 +10,9 @@ to the user.
 $(window).load(function() {
   'use strict'
 
+  if (console) {
+    console.log('Hi!')
+  }
   // scrollTargets stores the ID and relative height for each section targetted
   // by a menu item.
   var scrollTargets = {}
@@ -40,9 +43,13 @@ $(window).load(function() {
 
   // Initialize is called once on window load and again on window resize
   function initialize() {
-    windowSizeUpdate()
     scrollUpdate()
+    windowSizeUpdate()
+    // Run it again, giving the browser plenty of time to adjust:
+    setTimeout(windowSizeUpdate, 500)
+    resizeTimer = false
   }
+  initialize()
 
   // Identify the sections that will trigger menu bar updates on scroll and
   // (re)create the scrollTargets object.
@@ -52,7 +59,7 @@ $(window).load(function() {
     scrollTargets = {}
     var overflowFound = false
     menuSelections.each(function() {
-      // Store sections and their positions (top offsets)
+      // Store sections and their positions (top offsets) in var scrollTargets
       var id = $(this).data('target')
       var section = $('#' + id)
       if (!section.length) {
@@ -60,9 +67,6 @@ $(window).load(function() {
       }
       var position = parseInt( section.offset().top )
       scrollTargets[id] = position
-      scrollTargetsSortedKeys = Object.keys(scrollTargets).sort(function(a,b) {
-        return scrollTargets[a] - scrollTargets[b]
-      })
 
       // Check for overflows and hide text if any are detected
       var minWidth = $('.text', this).innerWidth() * 1.25
@@ -70,6 +74,11 @@ $(window).load(function() {
       if ( !overflowFound && minWidth > parentWidth) {
         overflowFound = true
       }
+    })
+
+    // Store a sorted array of the scroll targets
+    scrollTargetsSortedKeys = Object.keys(scrollTargets).sort(function(a,b) {
+      return scrollTargets[a] - scrollTargets[b]
     })
 
     if (overflowFound === false) {
@@ -150,8 +159,9 @@ $(window).load(function() {
 
 
   $(window).resize(function() {
-    clearTimeout(resizeTimer)
-    resizeTimer = setTimeout(initialize, 200)
+    if (!resizeTimer) {
+      resizeTimer = setTimeout(initialize, 200)
+    }
   })
 
   $(window).scroll(function() { scrollUpdate() } )
