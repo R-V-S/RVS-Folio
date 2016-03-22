@@ -10,8 +10,8 @@ to the user.
 $(document).ready(function() {
   'use strict'
 
-  if (console) {
-    console.log('Hi!')
+  if (window.console) {
+    console.log('%cHi! Thanks for looking at my little portfolio/resume. If you have any questions, feel free to email me at rajeev.v.singh@gmail.com', ' font-size: 120%; color: #333; padding: 0 2em; border-radius: 20px; background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(50,30,0,0.03) 3px, rgba(50,30,0,0.03) 8px);')
   }
   // windowHeight cached for speed.
   var windowHeight = parseInt( $(window).height() )
@@ -97,8 +97,6 @@ $(document).ready(function() {
         ceiling = targetPosition
       }
     })
-    console.log(floor)
-    console.log(newSection)
     if (newSection !== activeSection) {
       if (activeSection) {
         menuSelections.filter('[data-target="'+activeSection+'"]').removeClass('active')
