@@ -26,7 +26,7 @@ section#content {
   }
   ol {
     counter-reset: pseudo-ordered-list;
-    padding: 0 0 0 10%;
+    padding: 0 0 0 9%;
     transition: padding 0.3s ease;
 
     li {
@@ -52,7 +52,7 @@ section#content {
         counter-increment: pseudo-ordered-list;
         font-weight: bold;
         height: 25px;
-        left: -2em;
+        left: -1.75em;
         line-height: 132%;
         position: absolute;
         text-align: center;
