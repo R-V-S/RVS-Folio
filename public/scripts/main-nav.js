@@ -151,7 +151,7 @@ $(window).load(function() {
 
   $(window).resize(function() {
     clearTimeout(resizeTimer)
-    resizeTimer = setTimeout(initialize, 100)
+    resizeTimer = setTimeout(initialize, 200)
   })
 
   $(window).scroll(function() { scrollUpdate() } )

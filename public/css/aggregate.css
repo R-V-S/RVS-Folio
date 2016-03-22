@@ -225,7 +225,10 @@ section#menu-bar {
     position: relative;
     text-align: center;
     width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    max-height: 200px;
+    -webkit-transition: max-height 0.2s ease;
+    transition: max-height 0.2s ease; }
     section#menu-bar button i {
       clear: both;
       color: #666;
@@ -248,9 +251,11 @@ section#menu-bar {
     section#menu-bar button i {
       -webkit-transition: color 0.15s ease;
       transition: color 0.15s ease; }
-    section#menu-bar button.text-overflow .text {
-      opacity: 0;
-      line-height: 0; }
+    section#menu-bar button.text-overflow {
+      max-height: 80px; }
+      section#menu-bar button.text-overflow .text {
+        opacity: 0;
+        line-height: 0; }
     section#menu-bar button:hover, section#menu-bar button:focus {
       background: rgba(0, 0, 0, 0.1);
       color: #ddd; }

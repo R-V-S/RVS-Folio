@@ -21,6 +21,8 @@ section#menu-bar {
     text-align: center;
     width: 100%;
     overflow: hidden;
+    max-height: 200px;
+    transition: max-height 0.2s ease;
 
     // children
     i {
@@ -46,9 +48,13 @@ section#menu-bar {
     i {
       transition: color 0.15s ease;
     }
-    &.text-overflow .text {
-      opacity: 0;
-      line-height: 0;
+    &.text-overflow {
+      max-height: 80px;
+
+      .text {
+        opacity: 0;
+        line-height: 0;
+      }
     }
 
     // states
