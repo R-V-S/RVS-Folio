@@ -57,16 +57,7 @@ $(document).ready(function() {
     function windowSizeUpdate() {
       large.css('marginTop', 0)
       thumbnailOverlayAbove.height(0)
-      // If the ratio is very small, it means that the panning isn't
-      // accomplishing very much, so add a CSS class and remove the 'width'
-      // element style so that the class can determine the width
-      if (container.width() < 600) {
-        container.addClass('small-ratio').height('auto')
-        large.width('')
-        return true
-      } else if( container.hasClass('small-ratio') ) {
-        container.removeClass('small-ratio').height( containerHeight )
-      }
+      
       var largeWidth = parseInt(container.width() - (thumbnail.width() * 1.3) )
       visibleRatio = largeWidth / containerHeight
       large.width(largeWidth)

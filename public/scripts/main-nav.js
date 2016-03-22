@@ -22,6 +22,7 @@ $(document).ready(function() {
   // resizeTimer is used to control the rate at which windowSizeUpdate is
   // called, for performance reasons (I hate when my browser resize lags).
   var resizeTimer = false
+  var scrollUpdateTimer = false
   // A fixed value that can be adjusted to taste
   var topMargin = 50
   var menuSelections = $('#menu-bar nav button')
@@ -109,12 +110,14 @@ $(document).ready(function() {
     // Update the progress bar that runs across the bottom of the active button
     if (activeElement) {
       if (ceiling === 1000000) {
-        ceiling = $('body').height() - $(window).height()
+        ceiling = $('#content').height() - $(window).height()
       }
       var progress = (scrollPosition - floor) / (ceiling - floor)
       var progressBarWidth = activeElement.width() * progress
       $('.progress-bar', activeElement).width(progressBarWidth)
     }
+
+    scrollUpdateTimer = false
   }
 
 
@@ -153,7 +156,11 @@ $(document).ready(function() {
     }
   })
 
-  $(window).scroll(function() { scrollUpdate() } )
+  $(window).scroll(function() {
+    if (!scrollUpdateTimer) {
+      scrollUpdateTimer = setTimeout(scrollUpdate, 20)
+    }
+  })
 
   // kick the whole thing off
   setTimeout(initialize, 100)
