@@ -120,6 +120,7 @@ section#content {
         color: #666;
         content: counter(pseudo-ordered-list);
         counter-increment: pseudo-ordered-list;
+        font-size: 19px;
         font-weight: bold;
         height: 25px;
         left: -1.75em;
