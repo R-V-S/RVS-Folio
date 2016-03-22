@@ -1,11 +1,13 @@
 section#menu-bar {
   background: $menu-bar-bg;
-  box-shadow: 0 2px 3px $bar-shadow-color;
+  box-shadow: 4px 0 8px $bar-shadow-color;
   height: 100%;
   overflow: hidden;
   position: fixed;
   top: 40px;
   width: $menu-width;
+  margin-left: -$menu-width;
+  animation: slide-from-left 0.25s 0.7s ease forwards;
   z-index: 5;
 
   button {
@@ -18,6 +20,7 @@ section#menu-bar {
     position: relative;
     text-align: center;
     width: 100%;
+    overflow: hidden;
 
     // children
     i {
@@ -39,7 +42,9 @@ section#menu-bar {
     .text {
       white-space: nowrap;
       transition: opacity 0.15s ease, line-height 0.8s ease, height 0.8s ease;
-      display: block;
+    }
+    i {
+      transition: color 0.15s ease;
     }
     &.text-overflow .text {
       opacity: 0;
@@ -48,6 +53,7 @@ section#menu-bar {
 
     // states
     &:hover, &:focus {
+      background: rgba(0,0,0,0.1);
       color: #ddd;
       i {
         color: #888;
@@ -71,4 +77,9 @@ section#menu-bar {
   background: $menu-bar-accent;
   position: fixed;
   z-index: 4;
+}
+
+@keyframes slide-from-left {
+  0% { margin-left: -$menu-width }
+  100% { margin-left: 0 }
 }

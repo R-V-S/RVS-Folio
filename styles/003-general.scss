@@ -33,12 +33,15 @@ a {
     color: rgb(200,70,30);
   }
   &:hover, &:focus {
-    color: rgb(240,90,50);
+    color: rgb(255,100,60);
+  }
+  &:focus {
+    outline: none;
   }
 }
 
 hr {
-  background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, #ccc 7px, #ccc 18px);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, #ccc 5px, #ccc 18px, transparent 18px, transparent 22px, #ccc 22px, #ccc 24px);
   height: 10px;
   border: none;
 }
@@ -58,6 +61,8 @@ button {
   }
 }
 
+
+
 strong {
   color: #223;
 }
@@ -68,4 +73,17 @@ i.fa {
 
 .flex-me {
   display: flex;
+}
+
+.touch-ripple {
+  border-radius: 500px;
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  opacity: 1;
+  transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease, margin 0.4s ease, opacity 0.8s ease;
+  width: 1px;
+  height: 1px;
+  &.fade-out {
+    opacity: 0.001;
+  }
 }

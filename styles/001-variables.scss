@@ -20,7 +20,7 @@ $light-gray-shadow: #414141;
 $dark-gray: #333;
 $dark-gray-shadow: #282828;
 
-$bar-shadow-color: rgba(0,0,0,0.6);
+$bar-shadow-color: rgba(0,0,0,0.3);
 
 $dark-gray-radial: radial-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.4));
 $darker-gray-radial: radial-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.6));
@@ -28,7 +28,8 @@ $darker-gray-radial: radial-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.6));
 $title-bar-bg: $light-gray;
 $title-accent: $light-gray-shadow;
 
-$menu-bar-bg: linear-gradient(90deg, #3e3e3e 0%, #454545 33%, #424242 90%, #404040 100%);
+//$menu-bar-bg: linear-gradient(90deg, #3e3e3e 0%, #454545 33%, #424242 90%, #404040 100%);
+$menu-bar-bg: linear-gradient(90deg, #444, #555);
 $menu-bar-accent: $dark-gray-shadow;
 
 

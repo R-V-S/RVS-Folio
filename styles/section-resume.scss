@@ -1,0 +1,26 @@
+section#resume {
+  ul.cards h3 {
+    margin-bottom: 1em;
+  }
+  ul.cards > li > ul {
+    list-style-type: none;
+  }
+  #experience ul li {
+    list-style-type: circle;
+  }
+  h4 {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 115%;
+  }
+  h5 {
+    margin: 0 0 1em;
+    color: #777;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 115%;
+  }
+  .timeframe {
+    color: #777;
+  }
+}

@@ -3,10 +3,13 @@
 <html>
 
 <head>
-  <title>R.V.S. - Portfolio</title>
+  <title>Rajeev V. Singh</title>
   <link rel="author" content="R.V.S." href="http://www.rajeevsingh.com" />
+  <meta charset="UTF-8">
   <meta name="description" content="A show-and-tell of notable design and development projects." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta NAME="robots" content="NOINDEX, NOFOLLOW">
+  <link rel="icon" href="favicon.png">
 
   <script src="https://use.typekit.net/pgp1vbn.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -20,38 +23,39 @@
 
   <section id="title-bar">
     <h1><img src="images/rajeev-v-singh.png" alt="Rajeev V. Singh" /></h1>
-    <a class="contact" href="mailto:rajeev.v.singh@gmail.com"><i class="fa fa-envelope"></i><span class="text">Contact</span></a>
+    <a id="contact-link" class="contact" target="_blank" href="mailto:rajeev.v.singh@gmail.com"><i class="fa fa-envelope"></i><span class="text">Contact</span></a>
   </section>
   <div id="title-bar-shadow"></div>
 
+  <!-- MARK: main menu -->
   <section id="menu-bar">
     <nav id="menu">
       <button type="button" data-target="introduction">
         <i class="fa fa-hand-paper-o" style="transform: rotate(90deg)"></i>
         <span class="text">Introduction</span>
       </button>
-      <button type="button" data-target="web-design">
-        <i class="fa fa-list-alt"></i>
-        <span class="text">Web Design</span>
+      <button type="button" data-target="portfolio">
+        <i class="fa fa-briefcase"></i>
+        <span class="text">Portfolio</span>
       </button>
-      <button type="button" data-target="web-development">
-        <i class="fa fa-code"></i>
-        <span class="text">Web Development</span>
+      <button type="button" data-target="resume">
+        <i class="fa fa-list"></i>
+        <span class="text">Resume</span>
+      </button>
+      <button type="button" data-target="contact">
+        <i class="fa fa-envelope"></i>
+        <span class="text">Contact</span>
       </button>
       <!--
-      <button type="button" data-target="apps-software">
-        <i class="fa fa-desktop"></i>
-        <span class="text">Apps &amp; Software</span>
-      </button>
       <button type="button" data-target="software"><i class="fa fa-code"></i>App Development</button>
-    -->
       <button type="button" data-target="fun">
         <i class="fa fa-gamepad"></i>
         <span class="text">Fun &amp; Games</span>
       </button>
+      -->
     </nav>
   </section>
-  <div id="menu-bar-shadow"></div>
+  <!--<div id="menu-bar-shadow"></div>-->
 
   <section id="content">
     <section id="introduction">
@@ -89,10 +93,10 @@
         </div>
         <div class="content-block block">
 
-          <ol class="indent">
+          <ul class="cards">
             <li>
               <h3>Code and Design</h3>
-              <img src="images/illustration-code.png" alt="" />
+              <img class="illustration" src="images/illustration-code.png" alt="" />
               <p>While I usually find myself employed as a front-end developer, I'm almost always utilized for
                 back-end coding and design work as well. I'm known for being just as comfortable in Photoshop
                 and Illustrator as I am in a text editor (currently enjoying <a href="https://atom.io/">Atom</a>)
@@ -101,26 +105,27 @@
             </li>
             <li>
               <h3>JavaScript Wizardry</h3>
-              <img src="images/illustration-javascript.png" alt="" />
+              <img class="illustration" src="images/illustration-javascript.png" alt="" />
               <p>With the rising popularity of Node.js, JavaScript is poised to be one of the most pervasive and flexible
-                languages in use. It can be used to build web back-ends (Node.js), data-binding front-ends (React.js,
-                Socket.io, etc.), cross-platform desktop apps (NW.js), and mobile devices (Cordova and JXCore).
-
+                languages in use. It can be used to build back-ends (Node.js), asynchronous front-ends (React.js,
+                Socket.io, Angular.js), cross-platform desktop apps (NW.js), and mobile devices (Cordova and JXCore).
+                I specialize in JS, particularly Node.js and ECMAScript 2015, and I'm
+                excited about the direction the language is headed.
               </p>
             </li>
             <li>
               <h3>CMS Theming and Module Development</h3>
-              <img src="images/illustration-drupal.png" alt="" />
+              <img class="illustration" src="images/illustration-drupal.png" alt="" />
                <p>I first began working with WordPress while working for an ad agency. It was easy to
                  install, easy for clients to learn, and easy to modify. As the scope of my projects became
                  more complex and as the organizations I worked for became
                  larger and more complex as well, I began working with Drupal. I've since spent years
-                 writing themes (parent and child) and modules for Drupal.
+                 writing themes (both base and child) and modules for Drupal.
               </p>
             </li>
             <li>
               <h3>Ruby on Rails Front-end Development</h3>
-              <img src="images/illustration-rails.png" alt="" />
+              <img class="illustration" src="images/illustration-rails.png" alt="" />
                <p>While I'm not a Rails expert, I've had the opportunity to work on several large Rails
                  projects. Most recently, I designed and developed a complex front-end for Rails from the ground
                  up using React.js.
@@ -128,7 +133,7 @@
             </li>
             <li>
               <h3>Web Accessibility</h3>
-              <img src="images/illustration-accessibility.png" alt="" />
+              <img class="illustration" src="images/illustration-accessibility.png" alt="" />
               <p>I believe that the web is for everyone, and everyone benefits from a more accessible
                 web. Changes to the web that benefit accessibility almost always have other
                 benefits. Content that can be read by screen readers to the visually impaired can also
@@ -137,106 +142,238 @@
             </li>
             <li>
               <h3>Custom API interactions</h3>
-              <img src="images/illustration-api.png" alt="" />
-              <p>It's hard to get very far into web development without having to interact with third-party
-                data providers. I specialize in the custom development of tools/plugins/modules
+              <img class="illustration" src="images/illustration-api.png" alt="" />
+              <p>Interacting with third-party data providers is part of the web we live in.
+                I specialize in the custom development of tools/plugins/modules
                 that push and pull data from Facebook, Instagram, Twitter, Vimeo, Flickr, and Google Maps.
-                I've also set up server-side APIs in Drupal and Rails so that those sites can fulfill client requests.</p>
+                I've also set up server-side APIs in Drupal and Rails to facilitate server-to-server communication.</p>
             </li>
             <li>
               <h3>An Agile Approach</h3>
-              <img src="images/illustration-agile.png" alt="" />
+              <img class="illustration" src="images/illustration-agile.png" alt="" />
               <p>I was first introduced to agile management in 2012, and I've since adopted the agile philosophy for
                 virtually everything. I've used it on team projects that I've led, I've pushed for it to be adopted
                 by teams that I've worked on (and succeeded), and I even use it on my personal projects.</p>
             </li>
             <li>
               <h3>Robust documentation.</h3>
-              <img src="images/illustration-documentation.png" alt="" />
+              <img class="illustration" src="images/illustration-documentation.png" alt="" />
               <p>Code isn't worth much if it can't be understood and modified by other programmers. As a consequence,
                 I use self-explanatory variable names and include comments in my code, and for larger
                 projects, I write and organize separate documentation <em>simulateously as I code</em>. There, I
                 cover the things that don't fit into code comments: Why I made certain decisions, how future
                 modifications can be made, and where things can be found in the code.</p>
             </li>
-          </ol>
+          </ul>
         </div>
         <p class="block">Interested? Drop me an <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">email</a> and let's
           chat!
         </p>
     </section>
-    <section id="web-design">
-      <h2>Web Design</h2>
-      <h3>Berklee College of Music Homepage</h3>
-      <img src="images/screenshots/berklee homepage-feb-12-2016.png"
-           class="pannable"
-           data-height="300px">
-        <img  />
-      </div>
-      <p>In 2014, Berklee was faced with an all-too-common issue amongst colleges.
-        They had too much to say and too little space to say it on their existing homepage.
-        As part of a theme/design overhaul, I was asked to completely replace the homepage with one that
-        would perform better in user tests and analytics.</p>
-      <p>I formulated objectives for the homepage overhaul that were based on my own philosophy on web UX and design.
-        Those philosophies are:
-      </p>
-      <ol>
-        <li><strong>Design should not constrain content. </strong>
-          <span>Content and navigation areas must be able to shrink and grow with no design-specific constraints.</span>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <ul class="cards">
+        <li>
+          <h3>Berklee College of Music: Overview</h3>
+          <img src="images/screenshots/berklee-homepage-feb-12-2016.png"
+               class="pannable"
+               data-height="300px" />
+          <p>As chief web designer and senior front-end developer, I spearheaded a comprehensive design and
+            front-end upgrade to Berklee's site. Specifically: </p>
+            <ol>
+              <li>I outlined the requirements for an updated UI.</li>
+              <li>I created wireframes to represent the new UI.</li>
+              <li>I created design mock-ups in PhotoShop and Illustrator.</li>
+              <li>I acted as an advocate for users while negotiating with stakeholders.
+                My goal was to strike a balance between business objectives and user goals.</li>
+              <li>I developed a Drupal parent theme and several Drupal child themes.</li>
+              <li>I worked with our project manager to devise and implement unbiased user tests.</li>
+            </ol>
         </li>
-        <li><strong>Design should convey hierarchy. </strong>
-          <span>Raw HTML is output in a one-dimensional, linear fashion, and this mirrors how users digest information.
-            It's easier for users to digest information when their eyes aren't struggling to decide where on the page
-            they should go after absorbing a piece of information.</span>
+        <li>
+          <h3>Jenna Claire</h3>
+          <img src="images/screenshots/jenna-claire-homepage.png" />
+          <p>I was contracted by Jenna Claire Handbag Studio in 2009 to completely rebuild and redesign
+            their site. I was the sole web designer and developer on the project (though some graphical elements,
+            including their logo, had already been created by a graphic designer). Together, we created a fun
+            site with an interactive handbag design tool. I built the
+            site in WordPress and created a modules that would allow Jenna Claire to add/modify handbags to
+            the interactive designer without developer assistance.</p>
+          <p>Users could choose from a range of fabrics for each
+          individual section of the handbag and the image would update automatically. Lighting and shading
+          would also be calculated.</p>
+          <p>Although this work suffers from age (I would approach this problem
+            very differently today), I feel it was ahead of its time in 2009.  This was years before nike.com introduced
+            their custom shoe designer, and I feel that my code resulting in more realistic shading. </p>
+          <img src="images/screenshots/jenna-claire-products-cabana-tote-customizing.png" />
         </li>
-        <li><strong>Good navigation is multi-faceted.</strong>
-          <span>Since different users internally categorize information in different ways,
-                it helps to employ multiple navigational elements that frame the content in different ways.</span>
+        <li>
+          <h3>LitWitKit</h3>
+          <img src="images/screenshots/litwitkit-homepage-v1a.png"
+              class="pannable"
+              data-height="300px" />
+          <p>LitWitKit was a nice departure from the gray and red color palette of Berklee. I designed the
+            site, created the illustrations (which make use of SVG.JS for fun little
+            animations on mouse hover), and developed the site (back-end and front-end). I used Node.JS along
+            with Socket.io for data synchronization and Mongoose (MongoDB) as a database.</p>
         </li>
-        <li><strong>Good homepages have a hook. </strong>
-          <span>Just as with songs, one central hook helps to make a page memorable.
-            This is especially true if that page has a marketing agenda.</span>
+        <li>
+          <h3>Berklee Hub</h3>
+          <img src="images/screenshots/berklee-hub-screenshot-smaller.png"
+               class="pannable"
+               data-height="300px" />
+          <p>The Berklee Hub is a notification center that pulls in student data across the campus
+            and allows students to filter and customize the content they receive. It was built in
+            Rails by a team of three. I was responsible for design and front-end development. I built the front-end
+            using React.JS and assisted with the back-end as needed.</p>
         </li>
-        <li><strong>Small screen and large screen versions of a page should be as similar as possible.</strong>
-          <span>There is an adjustment period when a user visits a site for the first time: They have to
-            digest the structure of the page and build their own internal model of it in their brains, which
-            they will then use to predict where they can find content that they want. Along the lines of
-            "The Principle of Least Astonishment," there should be no surprises when visiting the same
-            page on a device with a different screen size.</span>
+        <li>
+          <h3>Drupal Modules</h3>
+          <img src="images/screenshots/berklee-off-canvas-menu-and-auto-complete.png" />
+          <p>I've written over a dozen Drupal modules to either fulfill needs not covered by existing
+          modules (at the time of their development), or to provide a tailored user experience.
+          Some highlights include:</p>
+          <ol>
+            <li>Smart Autocomplete (shown above), which supplements a search field with a filterable list of
+              node titles.</li>
+            <li>Menu Fields, which allows fields to be added to menus and menu items</li>
+            <li>Social Media Manager, which allows content admins to easily manage social media accounts
+              related to the site, and to inject social media feeds into blocks and pages. </li>
+            <li>WYSIWYG Filters, which provides content managers with added flexibility in
+              controlling the look, feel, and behavior of content</li>
+            <li>Advanced Contextual Filters, which adds contextual filters to Views for Workbench
+              Access, Role-based Visibility, advanced Date/time specifications, pager overrides,
+              and more.</li>
+            <li>Menu Visibility, which allows granular control of menu item visibility based on
+              user role and Workbench Access settings.</li>
+            <li>Embedded Help, which allows tooltips and slide-out drawers for supplementary help to
+              be added to any field in the admin interface.</li>
+            <li>Content Share, which sets up an API for responding to API requests for block, content,
+              and menu data. Returns user-specific data, when possible.</li>
+            <li>Workbench Access Menus, which allows menus to be assigned to Workbench Access Sections.
+              Works in conjunction with Menu Visibility, Workbench Access, and Menu Fields to create
+              a highly individualized user experience.</li>
+            <li>Node Info Block, which displays node information on a rendered page in a slide-out
+              drawer, for easy access to non-visible details like node ID and hidden taxonomy terms.</li>
+          </ol>
         </li>
-      </ol>
-      <p>That led to the following design decisions:</p>
-      <ol>
-        <li>Horizontal navigational elements, including the main menu, were placed into an off-canvas menu.</li>
-        <li>Horizontally stacking content blocks were replaced with full-width, vertically stacking blocks.</li>
-        <li>The content on the homepage was designed to direct users to high-interest content inside the site through
-          three semi-redundant lists. Each list approaches the content from a different perspective:
-          <strong>what</strong> the content is,
-          <strong>who</strong> the audience is, and
-          <strong>where</strong> Berklee offers services.</li>
-        <li>An auto-playing video (with audio muted by default, but with controls to enable sound and pause/play) replaced the
-          slider at the top of the page. The video content features Berklee students and alumni. They, and their music,
-          have proven to be Berklee's best marketing asset. </li>
-        <li>To maintain one consistent experience amongst differently sized screens, the menu was designed to remain off-canvas
-          on the desktop and full-width elements were preferred over horizontally placed elements.</li>
-      </ol>
-      <hr />
-      <h3>Berklee Today</h3>
-      <img src="images/screenshots/berklee-today-spring-2014.png"
-           class="pannable"
-           data-height="300px">
-        <img  />
+        <li>
+          <h3>Berklee Today</h3>
+          <img src="images/screenshots/berklee-today-spring-2014.png"
+               class="pannable"
+               data-height="300px" />
+          <p>Berklee's magazine was – and still is – primarily designed for print. The challenge
+            presented to the Digital Strategy team at Berklee was to adapt that print content into
+            something that would work on the web. The project passed through many hands until it landed
+            with me, and I did my best to create a design that remained true to the original print version
+            but didn't bake artifacts from the original print design into the web UI/design.</p>
+          <p>I also handled all development related to the project, including Views-driven menus that
+            take advantage of contextual filters and an automated layout system based on article tagging.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Portfolio</h2>
+      <ul class="cards">
+        <li>
+          <h3>Languages</h3>
+          <ol id="languages">
+            <li><strong>Javascript &amp; Node.js</strong> - Specialization</li>
+            <li><strong>Swift &amp; Cocoa</strong> - Learning with the intent of making it a specialization</li>
+            <li><strong>PHP</strong> - Long working history</li>
+            <li><strong>CSS, Sass, Compass or Bourboun/Neat/Bitters</strong> - Long working history</li>
+            <li><strong>Ruby</strong> - Limited working history</li>
+            <li><strong>Python</strong> - Casual use</li>
+            <li><strong>Matlab</strong> - Casual use</li>
+          </ol>
+        </li>
+        <li>
+          <h3>Software and Libraries</h3>
+          <ol id="software">
+            <li><strong>React</strong> - 1 year of experience, one major project and several smaller projects.</li>
+            <li><strong>Drupal</strong> - 5+ years of experience, several complete themes, over a dozen modules, and tens of thousands of lines of code.</li>
+            <li><strong>jQuery</strong> - 5+ years of experience.</li>
+            <li><strong>Wordpress</strong> - Several years of previous experience, a few complete sub-themes, extensive module modifications.</li>
+            <li><strong>Ruby On Rails</strong> - Several years of experience (on and off) developing front-ends.</li>
+            <li><strong>Git</strong> - Daily use of git in a multi-developer environment.</li>
+            <li><strong>Blender</strong> - Daily use of Blender to create 3D models for printing.</li>
+            <li><strong>Photoshop</strong> - Daily use of Photoshop to create mock-ups and enhance images.</li>
+            <li><strong>Illustrator</strong> - Occasional use of Illustrator to create vector graphics.</li>
+          </ol>
+        </li>
+        <li>
+          <h3>Experience</h3>
+          <ul class="reverse" id="experience">
+            <li>
+              <h4>Berklee College of Music</h4>
+              <h5>Senior Front-End Developer, April 2013 to Present</h5>
+              <ul>
+                <li>Developed and designed an extensible, device-agnostic (responsive) theme for www.berklee.edu</li>
+                <li>Developed Drupal modules and patches to improve and extend the functionality of
+                    www.berklee.edu for both users and administrators/content contributors</li>
+                <li>Documented feature enhancements for both developers and content managers</li>
+                <li>Participated in formulating UX tests and responding to the testing results</li>
+                <li>Designed custom pages and elements for departments and colleges, as needed</li>
+                <li>Created design mock-ups as needed</li>
+              </ul>
+            </li>
+            <li>
+              <h4>Wright State University</h4>
+              <h5>Front-End Developer, April 2011 to April 2013</h5>
+              <ul>
+                <li>Developed an extensible, device-agnostic (responsive) base theme to be used on multiple Drupal sites,
+                    notably www.wright.edu and, in the future, all Wright State college sites and major subdomains</li>
+                <li>Planned and implemented UX tests and surveys, in conjunction with the entire Wright State web team</li>
+                <li>Developed sub-themes for departments and colleges, as needed</li>
+                <li>Developed Drupal modules and patches to improve and extend the functionality of www.wright.edu for both users and administrators</li>
+                <li>Created design mock-ups for Wright State colleges and departments</li>
+              </ul>
+            </li>
+            <li>
+              <h4>The Next Wave</h4>
+              <h5>Web Designer / Developer, October 2008 to June 2011</h5>
+              <ul>
+                <li>Designed 2D & 3D art for online advertising, presentation and games</li>
+                <li>Developed websites using HTML, PHP, Javascript (inc. AJAX)</li>
+                <li>Extended existing Content Management Systems (WordPress, Joomla, and Drupal) with PHP code (custom developed plug-ins) and themes</li>
+                <li>Managed company web server (Linux+Apache)</li>
+              </ul>
+            </li>
+            <li>
+              <h4>Freelance</h4>
+              <h5>Graphic Designer / Web Developer / 3D Modeler, July 2007 to September 2008</h5>
+              <ul>
+                <li>Developed websites either from scratch (HTML, PHP, Javascript) or using an existing CMS (Wordpress, Joomla, or Drupal)</li>
+                <li>Designed 2D and 3D art for advertising, presentation and games</li>
+                <li>Modeled 3D artwork suitable for machine press</li>
+                <li>Developed interactive online 3D applications using 3D Studio MAX, Adobe Flash and/or Adobe Director </li>
+              </ul>
+            </li>
+            <li>
+              <h4>Linked Technologies</h4>
+              <h5>Graphic Designer / Web Developer, October 2006 to July 2007</h5>
+              <ul>
+                <li>Interacted independently with clients to create and manage dynamic, database-driven web pages.
+                    Involved coding in web languages (ASP, PHP, Javascript/AJAX and/or SQL, depending on project requirements)</li>
+                <li>Created advertisements for both print and web using Adobe Photoshop and Flash</li>
+                <li>Managed/updated internal web pages and databases (ASP and SQL)</li>
+                <li>Created and Managed Online Advertising Accounts (Google AdWords and Yahoo Search Marketing)</li>
+                <li>Evaluated business software for both internal and client use (included CRM, database, scheduling and accounting software)</li>
+                <li>Trained and managed junior employees</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ul>
 
     </section>
 
-    <section id="web-development">
-    </section>
+  </section>
 
-    <section id="apps-software">
-    </section>
-
-    <section id="fun">
-    </section>
+  <section id="obligatory-footer">
+    <p id="copyright">Copyright &copy; 2016 Rajeev V. Singh</p>
+    <p id="silly">You made it to the very bottom! That must mean you want to <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">email me.</a></p>
   </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

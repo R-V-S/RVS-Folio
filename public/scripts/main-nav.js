@@ -29,8 +29,9 @@ $(window).load(function() {
   // called, for performance reasons (I hate when my browser resize lags).
   var resizeTimer = false
   // A fixed value that can be adjusted to taste
-  var topMargin = 65
+  var topMargin = 50
   var menuSelections = $('#menu-bar nav button')
+  var menuBar = $('#menu-bar')
 
   menuSelections.each(function() {
     var progressBar = $('<div />').addClass('progress-bar').appendTo( $(this) )
@@ -64,14 +65,17 @@ $(window).load(function() {
       })
 
       // Check for overflows and hide text if any are detected
-      if ( !overflowFound && $(this)[0].scrollWidth > $(this).innerWidth() ) {
+      var minWidth = $('.text', this).innerWidth() * 1.25
+      var parentWidth = $(this).width()
+      if ( !overflowFound && minWidth > parentWidth) {
         overflowFound = true
-        menuSelections.addClass('text-overflow')
       }
     })
 
     if (overflowFound === false) {
       menuSelections.removeClass('text-overflow')
+    } else {
+      menuSelections.addClass('text-overflow')
     }
   }
 
@@ -106,21 +110,44 @@ $(window).load(function() {
     if (activeElement) {
       var floor = scrollTargets[newSection]
       var ceiling = scrollTargets[nextSection]
+      if (!ceiling) {
+        ceiling = $('body').height() - $(window).height()
+      }
       var progress = (scrollPosition - floor) / (ceiling - floor)
       var progressBarWidth = activeElement.width() * progress
       $('.progress-bar', activeElement).width(progressBarWidth)
     }
   }
 
-  // Scroll to the relevant section on menu item click
-  function menuUpdate() {
-    menuSelections.click(function() {
-      var id = $(this).data('target')
+
+  menuSelections.click(function(e) {
+    // Create a touch ripple on click
+    var x = e.pageX - $(this).offset().left
+    var y = e.pageY - $(this).offset().top
+    var touchRippleElement = $('<div />').addClass('touch-ripple').css('left', x + 'px').css('top', y + 'px').appendTo( $(this) )
+    var scale = Math.max( $(this).width(), $(this).height() ) * 2
+    var offset = (-scale / 2) + 'px'
+    setTimeout(function() {
+      touchRippleElement.addClass('grow').width(scale).height(scale).css('marginLeft', offset).css('marginTop', offset)
+    }, 10)
+    setTimeout(function() {
+      touchRippleElement.addClass('fade-out')
+    }, 410)
+    setTimeout(function() {
+      touchRippleElement.remove()
+    }, 2010)
+
+    // Scroll to the relevant section on menu item click
+    var id = $(this).data('target')
+    if (id === 'contact') {
+      $('a#contact-link').get(0).click()
+    } else {
       var targetPosition = Math.max(0, scrollTargets[id] - topOffset)
-      $('html, body').animate( {scrollTop: targetPosition + 'px'}, 400)
-    })
-  }
-  menuUpdate()
+      $('html, body').animate( {scrollTop: targetPosition + 'px'}, 500, 'easeOutCirc')
+    }
+  })
+
+
 
   $(window).resize(function() {
     clearTimeout(resizeTimer)
@@ -130,6 +157,6 @@ $(window).load(function() {
   $(window).scroll(function() { scrollUpdate() } )
 
   // kick the whole thing off
-  initialize()
+  setTimeout(initialize, 100)
 
 })

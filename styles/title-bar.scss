@@ -1,12 +1,16 @@
+$title-bar-height: 39px;
+
 section#title-bar {
   background: $title-bar-bg;
   box-shadow: 2px 0 3px $bar-shadow-color;
   box-sizing: border-box;
-  height: 39px;
+  height: $title-bar-height;
   padding: 1px $page-indent 0;
   position: fixed;
   width: 100%;
   z-index: 10;
+  animation: slide-from-top 0.3s 0.5s ease forwards;
+  top: - ($title-bar-height + 10px);
 
   h1 {
     margin: 2px 0 0 0;
@@ -72,4 +76,11 @@ section#title-bar {
   position: fixed;
   width: 100%;
   z-index: 9;
+  animation: slide-from-top 0.4s 0.4s ease forwards;
+  top: -($title-bar-height + 10px);
+}
+
+@keyframes slide-from-top {
+  0% { top: -($title-bar-height + 10px) }
+  100% { top: 0px }
 }
