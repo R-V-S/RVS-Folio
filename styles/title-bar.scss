@@ -1,9 +1,7 @@
 $title-bar-height: 39px;
 
 section#title-bar {
-  background-image: $texture;
-  background-blend-mode: color-burn;
-  background-color: $title-bar-bg;
+  background: $title-bar-bg repeat;
   box-shadow: 2px 0 3px $bar-shadow-color;
   box-sizing: border-box;
   height: $title-bar-height;
@@ -72,9 +70,7 @@ section#title-bar {
   }
 }
 #title-bar-shadow {
-  background-color: $title-accent;
-  background-image: $texture;
-  background-blend-mode: color-burn;
+  background: $title-accent repeat;
   box-shadow: 2px 0 3px $bar-shadow-color;
   height: 45px;
   position: fixed;

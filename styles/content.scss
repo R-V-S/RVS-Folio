@@ -101,9 +101,7 @@ ul.cards {
     overflow: hidden;
     padding: 3%;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: rgba(255,255,255,0.66);
-    background-image: $texture;
-    background-blend-mode: hard-light;
+    background: rgba(255,255,255,0.4);
     border-radius:3px;
     box-shadow: 2px 2px 13px rgba(0,0,0,0.15);
     margin: 0 0 2em;

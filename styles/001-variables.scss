@@ -14,9 +14,10 @@ $menu-shadow-width: 0.4%;
 
 // colors
 $background: #fff;
-$texture: url(../images/bgnoise-01.png);
-$light-gray: #4d4d4d;
-$light-gray-shadow: #414141;
+$white-texture: url(../images/bgnoise-01.png);
+
+$light-gray: url(../images/bgnoise-01-4d4d4d.png);
+$light-gray-shadow: url(../images/bgnoise-01-3d3d3d.png);
 $dark-gray: #333;
 $dark-gray-shadow: #282828;
 
@@ -29,7 +30,7 @@ $title-bar-bg: $light-gray;
 $title-accent: $light-gray-shadow;
 
 //$menu-bar-bg: linear-gradient(90deg, #3e3e3e 0%, #454545 33%, #424242 90%, #404040 100%);
-$menu-bar-bg: #444;
+$menu-bar-bg: url(../images/bgnoise-01-444444.png);;
 $menu-bar-accent: $dark-gray-shadow;
 
 

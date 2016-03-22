@@ -151,9 +151,7 @@ ul.cards {
     overflow: hidden;
     padding: 3%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.66);
-    background-image: url(../images/bgnoise-01.png);
-    background-blend-mode: hard-light;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 3px;
     box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.15);
     margin: 0 0 2em;
@@ -213,9 +211,7 @@ section#obligatory-footer {
     color: #666; }
 
 section#menu-bar {
-  background-color: #444;
-  background-image: url(../images/bgnoise-01.png);
-  background-blend-mode: color-burn;
+  background: url(../images/bgnoise-01-444444.png) repeat;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
   height: 100%;
   overflow: hidden;
@@ -401,9 +397,7 @@ section#resume .timeframe {
   color: #777; }
 
 section#title-bar {
-  background-image: url(../images/bgnoise-01.png);
-  background-blend-mode: color-burn;
-  background-color: #4d4d4d;
+  background: url(../images/bgnoise-01-4d4d4d.png) repeat;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   height: 39px;
@@ -470,9 +464,7 @@ section#title-bar {
               transform: scale(1.1); }
 
 #title-bar-shadow {
-  background-color: #414141;
-  background-image: url(../images/bgnoise-01.png);
-  background-blend-mode: color-burn;
+  background: url(../images/bgnoise-01-3d3d3d.png) repeat;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.3);
   height: 45px;
   position: fixed;

@@ -1,7 +1,5 @@
 section#menu-bar {
-  background-color: $menu-bar-bg;
-  background-image: $texture;
-  background-blend-mode: color-burn;
+  background: $menu-bar-bg repeat;
   box-shadow: 4px 0 8px $bar-shadow-color;
   height: 100%;
   overflow: hidden;
