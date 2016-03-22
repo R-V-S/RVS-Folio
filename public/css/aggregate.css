@@ -7,7 +7,7 @@ html, body {
   transition: color 0.33s ease, opacity 0.3s ease;
   color: #3a3a3f;
   height: 100%;
-  -webkit-overflow-scrolling: touch; }
+  overflow: none; }
 
 html {
   opacity: 0; }
