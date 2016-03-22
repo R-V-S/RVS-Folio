@@ -91,7 +91,7 @@ $(document).ready(function() {
       }
       var targetPosition = targetElement.offset().top + $('#content').scrollTop() - 10
       if (scrollPosition > targetPosition && targetPosition > floor) {
-        floor = targetPosition
+        floor = Math.max(0, targetPosition)
         newSection = targetId
       }
       if (scrollPosition < targetPosition && targetPosition < ceiling) {
