@@ -34,7 +34,7 @@ section#menu-bar {
     }
     .progress-bar {
       transition: opacity 0.5s ease, width 0.03s linear;
-      background: rgba(100,100,100,1);
+      background: repeating-linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(255,255,255,0.05) 3px, rgba(255,255,255,0.05) 8px);
       height: 5px;
       position: absolute;
       bottom: 0;
