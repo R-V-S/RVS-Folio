@@ -381,13 +381,29 @@ section#resume ul.cards h3 {
 section#resume ul.cards > li > ul {
   list-style-type: none; }
 
-section#resume #experience ul li {
-  list-style-type: circle; }
+section#resume ul#experience {
+  padding-left: 20px; }
+  section#resume ul#experience ul li {
+    list-style-type: circle; }
+  section#resume ul#experience > li {
+    margin-bottom: 2em; }
 
 section#resume h4 {
-  margin-bottom: 0;
+  margin: 0 0 0.66em;
   font-size: 20px;
   line-height: 115%; }
+  section#resume h4 .employer {
+    font-weight: bold; }
+  section#resume h4 .role {
+    font-weight: normal;
+    font-style: italic;
+    margin-left: 0.4em;
+    padding-left: 0.4em; }
+    section#resume h4 .role:before {
+      content: '-';
+      margin-left: -0.5em;
+      margin-right: 0.5em;
+      color: #888; }
 
 section#resume h5 {
   margin: 0 0 1em;
@@ -397,7 +413,10 @@ section#resume h5 {
   line-height: 115%; }
 
 section#resume .timeframe {
-  color: #777; }
+  color: #888;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 135%; }
 
 section#title-bar {
   background: url(../images/bgnoise-01-4d4d4d.png) repeat;

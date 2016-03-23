@@ -5,13 +5,34 @@ section#resume {
   ul.cards > li > ul {
     list-style-type: none;
   }
-  #experience ul li {
-    list-style-type: circle;
+  ul#experience {
+    padding-left: 20px;
+    ul li {
+      list-style-type: circle;
+    }
+    > li {
+      margin-bottom: 2em;
+    }
   }
   h4 {
-    margin-bottom: 0;
+    margin: 0 0 0.66em;
     font-size: 20px;
     line-height: 115%;
+    .employer {
+      font-weight: bold;
+    }
+    .role {
+      font-weight: normal;
+      font-style: italic;
+      margin-left: 0.4em;
+      padding-left: 0.4em;
+      &:before {
+        content: '-';
+        margin-left: -0.5em;
+        margin-right: 0.5em;
+        color: #888;
+      }
+    }
   }
   h5 {
     margin: 0 0 1em;
@@ -21,6 +42,9 @@ section#resume {
     line-height: 115%;
   }
   .timeframe {
-    color: #777;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 135%;
   }
 }
