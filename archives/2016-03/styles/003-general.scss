@@ -1,0 +1,91 @@
+html, body {
+  font-family: $body-font, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(../images/bgnoise-01.png) repeat;
+  transition: color 0.33s ease, opacity 0.3s ease;
+  color: #3a3a3f;
+  height: 100%;
+  overflow: none;
+}
+
+html {
+  opacity: 0;
+
+  &.wf-active {
+    opacity: 1;
+  }
+}
+
+section {
+  clear: both;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: karmina, serif;
+  color: #515151;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.33s ease, opacity 0.3s ease;
+
+  &, &:visited {
+    color: rgb(200,70,30);
+  }
+  &:hover, &:focus {
+    color: rgb(255,100,60);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, #ccc 5px, #ccc 18px, transparent 18px, transparent 22px, #ccc 22px, #ccc 24px);
+  height: 10px;
+  border: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: $body-font;
+  transition: color 0.33s ease, opacity 0.3s ease;
+
+  // states
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+
+
+strong {
+  color: #223;
+}
+
+i.fa {
+  margin-right: 5px;
+}
+
+.flex-me {
+  display: flex;
+}
+
+.touch-ripple {
+  border-radius: 500px;
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  opacity: 1;
+  transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease, margin 0.4s ease, opacity 0.8s ease;
+  width: 1px;
+  height: 1px;
+  &.fade-out {
+    opacity: 0.001;
+  }
+}

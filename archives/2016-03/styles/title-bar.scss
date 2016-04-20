@@ -1,0 +1,86 @@
+$title-bar-height: 39px;
+
+section#title-bar {
+  background: $title-bar-bg repeat;
+  box-shadow: 2px 0 3px $bar-shadow-color;
+  box-sizing: border-box;
+  height: $title-bar-height;
+  padding: 1px $page-indent 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  animation: slide-from-top 0.3s 0.5s ease forwards;
+  top: - ($title-bar-height + 10px);
+
+  h1 {
+    margin: 2px 0 0 0;
+    display: inline-block;
+    img {
+      width: auto;
+      height: 40px;
+    }
+  }
+  a.contact {
+    float: right;
+    color: #ccc;
+    background-image: $contact-link-bg;
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    border-right: 1px solid rgba(255,255,255, 0.23);
+    border-radius: 4px;
+    padding: 3px 15px 3px 45px;
+    position: relative;
+    font-size: 18px;
+    margin: 3px 0 0 0;
+    letter-spacing: 0.25px;
+    transition: color 0.3s ease, opacity 0.3s cubic-bezier(0.83,-1.6, 0.35, 1), background-image 0.3s ease; // background image radials aren't supported, but maybe one day...
+    opacity: 0.9;
+    i {
+      color: #999;
+      font-size: 20px;
+      position: absolute;
+      transform: scale(1.0);
+      transition: transform 0.2s cubic-bezier(0.83,-1.6, 0.35, 2.9);
+      left: 15px;
+      top: 5px;
+    }
+    span.text {
+      transition: max-width 0.6s ease, opacity 0.2s ease;
+      display: block;
+      max-width: 100px;
+    }
+
+    @media #{$small} {
+      padding-right: 5px;
+      span.text {
+        display: block;
+        opacity: 0;
+        max-width: 0;
+      }
+    }
+    &:hover, &:focus {
+      color: #d9d7d5;
+      background-image: $contact-link-bg-hover;
+      opacity: 1;
+    }
+    &:hover {
+      i {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+#title-bar-shadow {
+  background: $title-accent repeat;
+  box-shadow: 2px 0 3px $bar-shadow-color;
+  height: 45px;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  animation: slide-from-top 0.4s 0.4s ease forwards;
+  top: -($title-bar-height + 10px);
+}
+
+@keyframes slide-from-top {
+  0% { top: -($title-bar-height + 10px) }
+  100% { top: 0px }
+}

@@ -1,0 +1,39 @@
+// fonts
+$body-font: "brandon-grotesque";
+$headline-font: "brandon-grotesque";
+
+// media queries
+$small: 'only screen and (max-width : 600px)';
+$medium: 'only screen and (max-width: 800px)';
+
+// layout
+$page-indent: 5%;
+$menu-width: 12%;
+$menu-shadow-width: 0.4%;
+
+
+// colors
+$background: #fff;
+$white-texture: url(../images/bgnoise-01.png);
+
+$light-gray: url(../images/bgnoise-01-4d4d4d.png);
+$light-gray-shadow: url(../images/bgnoise-01-3d3d3d.png);
+$dark-gray: #333;
+$dark-gray-shadow: #282828;
+
+$bar-shadow-color: rgba(0,0,0,0.3);
+
+$dark-gray-radial: radial-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.4));
+$darker-gray-radial: radial-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.6));
+
+$title-bar-bg: $light-gray;
+$title-accent: $light-gray-shadow;
+
+//$menu-bar-bg: linear-gradient(90deg, #3e3e3e 0%, #454545 33%, #424242 90%, #404040 100%);
+$menu-bar-bg: url(../images/bgnoise-01-444444.png);;
+$menu-bar-accent: $dark-gray-shadow;
+
+
+$active-menu-item-bg: $dark-gray-radial;
+$contact-link-bg: $active-menu-item-bg;
+$contact-link-bg-hover: $darker-gray-radial;

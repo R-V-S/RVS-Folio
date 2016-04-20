@@ -1,0 +1,136 @@
+section#content {
+
+  padding: 46px 0 0 ($menu-width + $menu-shadow-width);
+
+  font-size: 19px;
+  line-height: 175%;
+  animation: fade-in-animation 0.3s 1s ease forwards;
+  opacity: 0;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  height: calc(100% - 46px );
+  overflow: scroll;
+
+  h2 {
+    font-size: 40px;
+    color: #333;
+    display: inline;
+  }
+  h3 {
+    font-size: 21pt;
+    margin-bottom: 0.25em;
+  }
+  p {
+    padding: 0 $page-indent 0 0;
+  }
+  a {
+    border-bottom: 1px dotted #ccc;
+    &:focus {
+      border-bottom: 1px solid rgb(220,180,150);
+    }
+  }
+  ol {
+    counter-reset: pseudo-ordered-list;
+    transition: padding 0.3s ease;
+    padding-left: 45px;
+
+    li {
+      list-style-type: none;
+      position: relative;
+      margin-bottom: 1.5em;
+      clear: both;
+
+      // children
+      p {
+        width: 60%;
+        @media #{$medium} {
+          width: 100%;
+        }
+      }
+
+      // pseudo-classes
+      &:before {
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        color: #666;
+        content: counter(pseudo-ordered-list);
+        counter-increment: pseudo-ordered-list;
+        font-size: 19px;
+        font-weight: bold;
+        height: 25px;
+        left: -37px;
+        line-height: 132%;
+        position: absolute;
+        text-align: center;
+        top: 3px;
+        width: 25px;
+      }
+
+
+    }
+  }
+  section {
+    margin: 2em 0 1em;
+    padding: 0 $page-indent 2em;
+    border-bottom: 10px solid rgba(0,0,0,0.1);
+    clear: both;
+    &:last-child {
+      margin-top: -2em;
+      margin-bottom: -2em;
+      margin-left: -1em;
+      padding: 1em;
+    }
+
+    .block {
+      display: block;
+    }
+    .indent {
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+ul.cards {
+  padding: 0;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  > li {
+    overflow: hidden;
+    padding: 3%;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.4);
+    border-radius:3px;
+    box-shadow: 2px 2px 13px rgba(0,0,0,0.15);
+    margin: 0 0 2em;
+    list-style-type: none;
+  }
+
+  img.illustration {
+    float: right;
+    height: auto;
+    width: 30%;
+    margin-top: -10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: block;
+    transition: width 0.3s ease;
+
+    @media #{$medium} {
+      width: 40%;
+    }
+    @media #{$small} {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes fade-in-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

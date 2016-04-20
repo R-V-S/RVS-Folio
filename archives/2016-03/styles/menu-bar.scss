@@ -1,0 +1,91 @@
+section#menu-bar {
+  background: $menu-bar-bg repeat;
+  box-shadow: 4px 0 8px $bar-shadow-color;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 40px;
+  width: $menu-width;
+  margin-left: -$menu-width;
+  animation: slide-from-left 0.25s 0.7s ease forwards;
+  z-index: 5;
+
+  button {
+    background-image: radial-gradient(transparent, transparent);
+    border-bottom: 1px solid $dark-gray-shadow;
+    color: #b3b3b3;
+    display: block;
+    font-size: 16px;
+    padding: 20px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    max-height: 200px;
+    transition: max-height 0.2s ease;
+
+    // children
+    i {
+      clear: both;
+      color: #666;
+      display: block;
+      font-size: 31px;
+      margin: 4px 0 8px 0;
+    }
+    .progress-bar {
+      transition: opacity 0.5s ease, width 0.03s linear;
+      background: repeating-linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(255,255,255,0.05) 3px, rgba(255,255,255,0.05) 8px);
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .text {
+      white-space: nowrap;
+      transition: opacity 0.15s ease, line-height 0.8s ease, height 0.8s ease;
+    }
+    i {
+      transition: color 0.15s ease;
+    }
+    &.text-overflow {
+      max-height: 80px;
+
+      .text {
+        opacity: 0;
+        line-height: 0;
+      }
+    }
+
+    // states
+    &:hover, &:focus {
+      background: rgba(0,0,0,0.1);
+      color: #ddd;
+      i {
+        color: #888;
+      }
+    }
+    &.active {
+      background-image: $active-menu-item-bg;
+      color: #ccc;
+      i {
+        color: #888;
+      }
+      .progress-bar {
+        opacity: 1;
+      }
+    }
+  }
+}
+#menu-bar-shadow {
+  width: $menu-width + $menu-shadow-width;
+  height: 100%;
+  background: $menu-bar-accent;
+  position: fixed;
+  z-index: 4;
+}
+
+@keyframes slide-from-left {
+  0% { margin-left: -$menu-width }
+  100% { margin-left: 0 }
+}

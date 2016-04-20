@@ -1,0 +1,29 @@
+section#introduction {
+  h2 {
+    display: inline;
+    color: #aaa;
+    border: none;
+    font-size: 28px;
+  }
+  h3 {
+    margin-bottom: 1em;
+  }
+  .intro-paragraph {
+    p:first-of-type {
+      display: inline;
+    }
+    color: #5c5c5c;
+  }
+  .flex-column {
+    margin: 1.5em 0 1em;
+    padding: 0 2em;
+
+    &:not(:last-child) {
+      border-right: 1px dashed #ccd;
+    }
+
+    p:first-of-type {
+      color: #555;
+    }
+  }
+}
