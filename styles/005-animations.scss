@@ -1,0 +1,17 @@
+
+// use animation-timing-function: infinite for infinite spin
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin3dOut {
+  from {
+    transform: rotate3d(1,1,1, 270deg);
+  } to {
+    transform: rotate3d(1,1,1, 360deg);
+  }
+}

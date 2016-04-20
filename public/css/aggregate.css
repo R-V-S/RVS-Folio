@@ -76,6 +76,75 @@ i.fa {
   .touch-ripple.fade-out {
     opacity: 0.001; }
 
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes spin3dOut {
+  from {
+    -webkit-transform: rotate3d(1, 1, 1, 270deg);
+            transform: rotate3d(1, 1, 1, 270deg); }
+  to {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+            transform: rotate3d(1, 1, 1, 360deg); } }
+
+@keyframes spin3dOut {
+  from {
+    -webkit-transform: rotate3d(1, 1, 1, 270deg);
+            transform: rotate3d(1, 1, 1, 270deg); }
+  to {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+            transform: rotate3d(1, 1, 1, 360deg); } }
+
+#banner {
+  overflow: hidden;
+  z-index: 1000;
+  position: relative;
+  width: 100%;
+  height: 800px; }
+  #banner canvas {
+    position: absolute;
+    top: 0; }
+  #banner #layer1 {
+    -webkit-animation: spin 140s cubic-bezier(0.24, 0.9, 0.85, 0.76), spin 380s 140s infinite linear;
+            animation: spin 140s cubic-bezier(0.24, 0.9, 0.85, 0.76), spin 380s 140s infinite linear;
+    z-index: 1; }
+  #banner #layer2 {
+    -webkit-animation: spin 300s cubic-bezier(0.24, 0.9, 0.85, 0.76), spin 500s 30s infinite linear;
+            animation: spin 300s cubic-bezier(0.24, 0.9, 0.85, 0.76), spin 500s 30s infinite linear;
+    opacity: 0.8;
+    z-index: 2; }
+  #banner #layer3 {
+    -webkit-animation: spin 320s infinite linear;
+            animation: spin 320s infinite linear;
+    opacity: 0.5;
+    z-index: 3; }
+  #banner #layer4 {
+    -webkit-animation: spin3dOut 30s cubic-bezier(0.24, 0.9, 0.85, 0.76), spin 400s 30s infinite linear;
+            animation: spin3dOut 30s cubic-bezier(0.24, 0.9, 0.85, 0.76), spin 400s 30s infinite linear;
+    z-index: 4; }
+  #banner .particle {
+    border-radius: 2px;
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    z-index: 20;
+    -webkit-transform-origin: 0 50px;
+            transform-origin: 0 50px; }
+
 section#content {
   padding: 46px 0 0 12.4%;
   font-size: 19px;
