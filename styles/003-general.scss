@@ -2,11 +2,8 @@ html, body {
   font-family: $body-font, arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url(../images/bgnoise-01.png) repeat;
   transition: color 0.33s ease, opacity 0.3s ease;
   color: #3a3a3f;
-  height: 100%;
-  overflow: none;
 }
 
 html {
@@ -22,9 +19,14 @@ section {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: karmina, serif;
+  font-family: $headline-font, sans-serif;
   color: #515151;
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'futura-pt';
 }
 
 a {
@@ -79,7 +81,7 @@ i.fa {
 
 .touch-ripple {
   border-radius: 500px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.05);
   position: absolute;
   opacity: 1;
   transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease, margin 0.4s ease, opacity 0.8s ease;

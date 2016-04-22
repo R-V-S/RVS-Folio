@@ -5,19 +5,43 @@ section#resume {
   ul.cards > li > ul {
     list-style-type: none;
   }
+
+  ul#languages, ul#software {
+    padding: 0;
+    li {
+      &:not(:last-of-type) { border-bottom: 1px solid #ddd; }
+      margin: 0.6em 0;
+      padding: 0.6em 0;
+    }
+    p {
+      margin: 0;
+      color: #616367;
+      font-style: italic;
+    }
+  }
+
   ul#experience {
     padding-left: 20px;
+
     ul li {
       list-style-type: circle;
     }
+
     > li {
       margin-bottom: 2em;
     }
+
+    h4 {
+      margin: 0 0 0.66em;
+    }
   }
   h4 {
-    margin: 0 0 0.66em;
+    margin: 0;
+    padding: 0;
     font-size: 20px;
+    font-weight: bold;
     line-height: 115%;
+    font-family: "museo-sans", sans-serif;
     .employer {
       font-weight: bold;
     }

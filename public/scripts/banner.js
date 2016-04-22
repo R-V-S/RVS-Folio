@@ -10,6 +10,7 @@ var Layer = {
     this.element = document.createElement('canvas');
     this.element.id = options.id;
     this.context = this.element.getContext('2d');
+
     // Check if the parent is a jQuery element.
     // If so, we can set the width and height automatically
     if (typeof options.parent.append === 'function') {
@@ -21,6 +22,11 @@ var Layer = {
     } else {
       console.error('Layer.init: could not be appended to parent');
     }
+    this.context.translate(0.5, 0.5);
+    this.context.imageSmoothingEnabled = true;
+  },
+  clear: function() {
+    this.context.clearRect(0, 0, this.element.width, this.element.height);
   },
   renderBg: function() {
     this.context.fillStyle = "rgb(5,6,8)";
@@ -77,11 +83,10 @@ var Layer = {
       this.context.closePath();
     }
   },
-  followParticles: function(options) {
-    var count = options && options.count ? options.count : 50;
-    this.element.onmousemove = function(e) {
-      console.log(e);
-    }
+  setSize: function(options) {
+    this.clear();
+    this.element.width = options.width;
+    this.element.height = options.height;
   }
 }
 
@@ -94,39 +99,129 @@ var Particle = {
   init: function(options) {
     this.element = document.createElement('canvas');
     this.element.id = options.id;
+    this.element.className = 'particle';
+    this.context = this.element.getContext('2d');
+    this.angle = 0;
+    this.angleStep = 0.02;
+    this.center = {};
+    this.radius = 120;
+    this.particleRadius = 3;
+    if (options && options.size) { this.size = options.size; } else { this.size = 3 };
+    if (options && options.center) {
+      this.center = options.center;
+    } else {
+      this.center.x = 100;
+      this.center.y = 100;
+    }
     if (typeof options.parent.append === 'function') {
       var size = Math.min( options.parent.width(), options.parent.height() ) * 0.666;
       this.element.width = size;
       this.element.height = size;
+      this.center.x = size / 2;
+      this.center.y = size / 2;
+      this.position = this.calculatePosition( {center: this.center, radius: this.radius, angle: this.angle} );
       options.parent.append(this.element);
+    } else if (typeof options.parent.appendChild === 'function') {
+      options.parent.appendChild(this.element);
     }
   },
-  calculateLocation: function() {
+  calculatePosition: function( options ) {
+    return { x: options.center.x + options.radius * Math.sin(options.angle) * 0.5, y: options.center.y + options.radius * Math.cos(options.angle) }
+  },
+  setRadius: function(radius) {
+    this.radius = radius;
+  },
+  setParticleRadius: function(particleRadius) {
+    this.particleRadius = particleRadius;
+  },
+  render: function(options) {
+    this.context.beginPath();
+    this.context.fillStyle = options.color;
 
+    this.context.arc(options.position.x, options.position.y, options.particleRadius, 0, Math.PI*2);
+    this.context.fill();
+    this.context.closePath();
+  },
+  tick: function(options) {
+    var trailLength = 51;
+    var colorTarget = [200,220,250];
+    var colorValues = [0,0,0];
+    var colorSteps = [];
+    for (var i=0; i<3; i++) {
+      colorSteps.push(colorTarget[i] / trailLength);
+    }
+
+    //if (options && options.trailLength) { trailLength = options.trailLength; }
+
+    var loopedAngle = this.angle - (this.angleStep * trailLength);
+    var particleRadius = this.particleRadius + 5;
+    for (var i = 0; i<trailLength; i++) {
+      if (i === 1) {
+        particleRadius = this.particleRadius + 5;
+      } else {
+        particleRadius = particleRadius * 0.98;
+      }
+
+      var color = 'rgb('+colorValues[0]+','+colorValues[1]+','+colorValues[2]+')';
+      var position = this.calculatePosition( {center: this.center, radius: this.radius, angle: loopedAngle} );
+      this.render( {color: color, particleRadius: particleRadius, position: position} );
+
+      for (var j=0; j<3; j++) {
+        colorValues[j] = parseInt(colorValues[j] + colorSteps[j]);
+      }
+      loopedAngle = loopedAngle + this.angleStep;
+    }
+
+    // Step the current angle forward & position
+    this.angle = this.angle + this.angleStep;
+    if (this.angle > 360) { this.angle = 0};
+    this.position = this.calculatePosition( {center: this.center, radius: this.radius, angle: this.angle} );
+  },
+  start: function(speed) {
+    this.interval = setInterval(this.tick(), speed);
+    //this.render( {color: '#aaa', size: 4, position: this.position} );
+  },
+  stop: function() {
+    clearInterval(this.interval);
   }
 }
 
 $(document).ready(function() {
   var $banner = $('#banner');
-  $banner.height( $(window).height() );
+  var originalHeight = $banner.height();
+  var layers = [];
 
   var backgroundLayer = Object.create(Layer);
+  layers.push(backgroundLayer);
   backgroundLayer.init( {id: 'backgroundLayer', parent: $banner} );
-  backgroundLayer.renderBg();
 
-  var layer1 = Object.create(Layer);
-  layer1.init( {id: 'layer1', parent: $banner} );
-  layer1.renderStars( {count: 200, shape: 'circle', radius: 200, color: 'hsl(230, 30%, 50%)'} );
+  for (var i=1; i<=4; i++) {
+    var newLayer = Object.create(Layer);
+    newLayer.init( {id: 'layer' + i, parent: $banner} );
+    layers.push(newLayer);
+  }
 
-  var layer2 = Object.create(Layer);
-  layer2.init( {id: 'layer2', parent: $banner} );
-  layer2.renderStars( {count: 200, shape: 'circle', color: 'hsl(220, 27%, 40%)'} );
+  /*
+  var particle1 = Object.create(Particle);
+  particle1.init( {id: 'particle1', parent: $banner} );
+  var interval = setInterval(function() {particle1.tick()}, 30);
+  */
 
-  var layer3 = Object.create(Layer);
-  layer3.init( {id: 'layer3', parent: $banner} );
-  layer3.renderStars( {count: 200, shape: 'circle', radius: 600, color: 'hsl(200, 23%, 50%)'} );
+  var bannerResize = function() {
+    var bannerHeight = $(window).height();
+    $banner.height(bannerHeight);
+    backgroundLayer.setSize( {'width': $banner.width(), 'height': bannerHeight} );
+    backgroundLayer.renderBg();
+    for (var i=1; i<=4; i++) {
+      layers[i].setSize( {'width': $banner.width(), 'height': bannerHeight} );
+    }
+    layers[1].renderStars( {count: 200, shape: 'circle', radius: 200, color: 'hsl(230, 30%, 50%)'} );
+    layers[2].renderStars( {count: 200, shape: 'circle', color: 'hsl(220, 27%, 40%)'} );
+    layers[3].renderStars( {count: 200, shape: 'circle', radius: 600, color: 'hsl(200, 23%, 50%)'} );
+    layers[4].renderStars( {count: 200, shape: 'circle', radius: 900, color: 'hsl(190, 20%, 50%)'} );
+  }
 
-  var layer4 = Object.create(Layer);
-  layer4.init( {id: 'layer4', parent: $banner} );
-  layer4.renderStars( {count: 200, shape: 'circle', radius: 900, color: 'hsl(190, 20%, 50%)'} );
+  $(window).resize(function() {bannerResize() });
+  bannerResize();
+
 })

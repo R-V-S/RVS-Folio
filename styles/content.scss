@@ -1,23 +1,17 @@
 section#content {
-
-  padding: 46px 0 0 ($menu-width + $menu-shadow-width);
-
+  padding: 0;
   font-size: 19px;
   line-height: 175%;
   animation: fade-in-animation 0.3s 1s ease forwards;
   opacity: 0;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
-  height: calc(100% - 46px );
-  overflow: scroll;
 
   h2 {
     font-size: 40px;
     color: #333;
-    display: inline;
+    margin-left: 5%;
   }
   h3 {
-    font-size: 21pt;
+    font-size: 25pt;
     margin-bottom: 0.25em;
   }
   p {
@@ -70,8 +64,9 @@ section#content {
     }
   }
   section {
-    margin: 2em 0 1em;
-    padding: 0 $page-indent 2em;
+    background: #e3e3e3;
+    margin: 0em 0 0em;
+    padding: 1px 0 0 0;
     border-bottom: 10px solid rgba(0,0,0,0.1);
     clear: both;
     &:last-child {
@@ -92,8 +87,14 @@ section#content {
   }
 }
 
-ul.cards {
-  padding: 0;
+ul.cards, ul.strips {
+  &.strips {
+    padding: 0;
+  }
+  &.cards {
+    padding: 0 5%;
+  }
+  margin: -17px 0 0 0;
 
   h3 {
     margin-top: 0;
@@ -101,19 +102,72 @@ ul.cards {
 
   > li {
     overflow: hidden;
-    padding: 3%;
+    padding: 5%;
+    list-style-type: none;
+  }
+  &.cards > li {
     border: 1px solid rgba(0,0,0,0.1);
-    background: rgba(255,255,255,0.4);
+    background: #fcfcfc;
     border-radius:3px;
     box-shadow: 2px 2px 13px rgba(0,0,0,0.15);
     margin: 0 0 2em;
-    list-style-type: none;
+  }
+  &.strips > li {
+    background: #eee;
+    padding: 7% 8%;
+    box-shadow: inset 0px 5px 30px rgba(0,0,0,0.2);
+
+    p {
+      margin-top: 2.5em;
+      line-height: 180%;
+      font-size: 20px;
+    }
+
+    &#code-strip {
+      background: url(../images/backgrounds/noisy-grid-inverted.jpg) repeat #bbb;
+      background-blend-mode: overlay;
+      color: #555;
+      p {
+
+      }
+    }
+
+    &#js-strip {
+      background: url(../images/backgrounds/hexagons-2.jpg) repeat #303B40;
+      background-blend-mode: overlay;
+      color: #667a83;
+      h3 {
+        color: #b9d2dd;
+      }
+    }
+
+    &#cms-strip {
+      background: url(../images/backgrounds/triangle-pattern-2.jpg) repeat #e1e1e1;
+      background-blend-mode: overlay;
+    }
+
+    &:nth-child(4n-2) {
+      background: #303B40;
+      color: #c3d4dc;
+      h3 {
+        color: white;
+      }
+    }
+
+    &:nth-child(4n) {
+      background: #23343C;
+      color: #c3d4dc;
+      h3 {
+        color: white;
+      }
+    }
   }
 
   img.illustration {
     float: right;
     height: auto;
-    width: 30%;
+    max-width: 30%;
+    max-height: 300px;
     margin-top: -10px;
     margin-left: 10%;
     margin-right: 10%;
@@ -121,10 +175,10 @@ ul.cards {
     transition: width 0.3s ease;
 
     @media #{$medium} {
-      width: 40%;
+      max-width: 40%;
     }
     @media #{$small} {
-      width: 100%;
+      max-width: 100%;
       margin: 0;
     }
   }
