@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     if (!loaded) {
       loaded = true;
-      setTimeout( function() { $header.addClass('loaded'); }, 250);
+      setTimeout( function() { $header.addClass('loaded'); }, 300);
     }
 
     if ( $(window).width() < minWidth) {
