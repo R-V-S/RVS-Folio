@@ -7,9 +7,14 @@
   justify-content: center;
   align-content: center;
   height: 600px;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease, opacity 3s ease;
+  opacity: 0;
 
-  &.scrollingDown, &.scrolled {
+  &.loaded {
+    opacity: 1;
+  }
+
+  &.scrollingDown.loaded, &.scrolled.loaded {
     height: 52px !important;
     position: fixed;
     background: #121418;

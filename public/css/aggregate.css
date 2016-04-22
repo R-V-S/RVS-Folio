@@ -339,9 +339,12 @@ section#obligatory-footer {
       -ms-flex-line-pack: center;
           align-content: center;
   height: 600px;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
-  #header.scrollingDown, #header.scrolled {
+  -webkit-transition: all 0.2s ease, opacity 3s ease;
+  transition: all 0.2s ease, opacity 3s ease;
+  opacity: 0; }
+  #header.loaded {
+    opacity: 1; }
+  #header.scrollingDown.loaded, #header.scrolled.loaded {
     height: 52px !important;
     position: fixed;
     background: #121418;
