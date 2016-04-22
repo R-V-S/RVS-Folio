@@ -146,7 +146,8 @@ i.fa {
   height: 17px;
   background: url(../images/backgrounds/checkered-separator.png) repeat-x;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  margin-top: -1px; }
 
 section#content {
   padding: 0;
