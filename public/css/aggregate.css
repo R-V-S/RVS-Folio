@@ -272,15 +272,18 @@ ul.cards, ul.strips {
     margin-left: 10%;
     margin-right: 10%;
     display: block;
-    -webkit-transition: width 0.3s ease;
-    transition: width 0.3s ease; }
+    -webkit-transition: width 0.3s ease, padding 0.3s ease;
+    transition: width 0.3s ease, padding 0.3s ease; }
     @media only screen and (max-width: 800px) {
       ul.cards img.illustration, ul.strips img.illustration {
         max-width: 40%; } }
     @media only screen and (max-width: 600px) {
       ul.cards img.illustration, ul.strips img.illustration {
-        max-width: 100%;
-        margin: 0; } }
+        width: 100%;
+        max-height: none;
+        margin: auto;
+        padding: 0 3em;
+        box-sizing: border-box; } }
 
 @-webkit-keyframes fade-in-animation {
   0% {
@@ -368,6 +371,28 @@ section#obligatory-footer {
   #header.scrollingDown #icon img, #header.scrolled #icon img {
     height: 50px;
     width: auto; }
+  #header #logotype {
+    display: none;
+    float: left;
+    opacity: 0;
+    -webkit-transition: opacity 2s ease;
+    transition: opacity 2s ease;
+    color: #333;
+    font-family: futura-pt;
+    font-size: 37px;
+    margin-left: 0.2em;
+    line-height: 50px; }
+    #header #logotype img {
+      height: 50px;
+      width: auto; }
+  #header.scrollingDown #logotype {
+    display: block; }
+  #header.scrolled #logotype {
+    display: block;
+    opacity: 1; }
+    @media only screen and (max-width: 600px) {
+      #header.scrolled #logotype {
+        opacity: 0; } }
   #header h1 {
     color: #eee;
     font-size: 69px;
@@ -401,12 +426,12 @@ nav#menu {
   color: #fcc62b;
   font-family: "museo-sans", sans-serif;
   font-weight: 300;
-  font-size: 24px; }
+  font-size: 23px; }
   nav#menu button {
     color: #fcc62b;
     font-family: "museo-sans", sans-serif;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 23px;
     padding: 0.5em 0.66em 0 0;
     text-transform: uppercase;
     position: relative; }

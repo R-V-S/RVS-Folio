@@ -172,14 +172,17 @@ ul.cards, ul.strips {
     margin-left: 10%;
     margin-right: 10%;
     display: block;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, padding 0.3s ease;
 
     @media #{$medium} {
       max-width: 40%;
     }
     @media #{$small} {
-      max-width: 100%;
-      margin: 0;
+      width: 100%;
+      max-height: none;
+      margin: auto;
+      padding: 0 3em;
+      box-sizing: border-box;
     }
   }
 }
