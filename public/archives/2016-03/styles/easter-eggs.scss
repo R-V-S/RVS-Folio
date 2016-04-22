@@ -1,0 +1,17 @@
+.dot-container {
+  position: relative;
+}
+
+.dot-boundary, .dot {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.dot {
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.05);
+  background-image: url('../images/bgnoise-01.png');
+  background-blend-mode: color-burn;
+}
+
+img.pixel-slide {
+}

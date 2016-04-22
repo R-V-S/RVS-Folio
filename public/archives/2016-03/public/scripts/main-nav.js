@@ -16,7 +16,7 @@ $(document).ready(function() {
   // windowHeight cached for speed.
   var windowHeight = parseInt( $(window).height() )
   // An offset that accounts for the fixed header
-  var topOffset = 60;
+  var topOffset = parseInt( $('#title-bar').height() )
   var activeSection
   var activeElement
   // resizeTimer is used to control the rate at which windowSizeUpdate is
@@ -25,8 +25,8 @@ $(document).ready(function() {
   var scrollUpdateTimer = false
   // A fixed value that can be adjusted to taste
   var topMargin = 50
-  var menuSelections = $('#menu button')
-  var menuBar = $('#menu')
+  var menuSelections = $('#menu-bar nav button')
+  var menuBar = $('#menu-bar')
 
   menuSelections.each(function() {
     var progressBar = $('<div />').addClass('progress-bar').appendTo( $(this) )
@@ -50,6 +50,7 @@ $(document).ready(function() {
   // in the menu bar
   function windowSizeUpdate() {
     windowHeight = parseInt( $(window).height() )
+    topOffset = parseInt( $('#title-bar').height() ) + topMargin
 
     // Check for overflows and hide text if any are detected
     var overflowFound = false
@@ -70,10 +71,11 @@ $(document).ready(function() {
   // Update the menu to reflect the section that's currently visible
   function scrollUpdate() {
     // get the position of the scrollbar relative to the top of the visible area
-    var scrollPosition = $(window).scrollTop() + topOffset + 1
-    var newSection
+    var scrollPosition = $('#content').scrollTop() + topOffset
+    // fall back on the first menu item's target section
+    var newSection = menuSelections.first().data('target')
     // the floor is the beginning of the currently visible section
-    var floor = 0
+    var floor = $('#'+newSection).offset().top
     // the ceiling is the end of the currently visible section (which
     // is either the beginning of the next currently visible section or the
     // end of the document
@@ -87,7 +89,7 @@ $(document).ready(function() {
       if (!targetElement.length) {
         return false
       }
-      var targetPosition = targetElement.offset().top
+      var targetPosition = targetElement.offset().top + $('#content').scrollTop() - 10
       if (scrollPosition > targetPosition && targetPosition > floor) {
         floor = Math.max(0, targetPosition)
         newSection = targetId
@@ -96,7 +98,7 @@ $(document).ready(function() {
         ceiling = targetPosition
       }
     })
-    if (newSection && newSection !== activeSection) {
+    if (newSection !== activeSection) {
       if (activeSection) {
         menuSelections.filter('[data-target="'+activeSection+'"]').removeClass('active')
       }
@@ -104,20 +106,14 @@ $(document).ready(function() {
       activeElement = menuSelections.filter('[data-target="'+activeSection+'"]')
       activeElement.addClass('active')
     }
-    if (!newSection) {
-      if (activeSection) {
-        menuSelections.filter('[data-target="'+activeSection+'"]').removeClass('active')
-        activeSection = null;
-      }
-    }
 
     // Update the progress bar that runs across the bottom of the active button
-    if (activeElement && newSection) {
+    if (activeElement) {
       if (ceiling === 1000000) {
-        ceiling = $('html,body').height() - $(window).height()
+        ceiling = $('#content')[0].scrollHeight - $(window).height()
       }
       var progress = (Math.max(0,scrollPosition) - floor) / (ceiling - floor)
-      var progressBarWidth = Math.max(0, parseInt(activeElement.width() * progress) )
+      var progressBarWidth = activeElement.width() * progress
       $('.progress-bar', activeElement).width(progressBarWidth)
     }
 
@@ -127,11 +123,10 @@ $(document).ready(function() {
 
   menuSelections.click(function(e) {
     // Create a touch ripple on click
-
     var x = e.pageX - $(this).offset().left
     var y = e.pageY - $(this).offset().top
     var touchRippleElement = $('<div />').addClass('touch-ripple').css('left', x + 'px').css('top', y + 'px').appendTo( $(this) )
-    var scale = Math.max( $(this).width(), $(this).height() ) * 1.5
+    var scale = Math.max( $(this).width(), $(this).height() ) * 2
     var offset = (-scale / 2) + 'px'
     setTimeout(function() {
       touchRippleElement.addClass('grow').width(scale).height(scale).css('marginLeft', offset).css('marginTop', offset)
@@ -141,21 +136,16 @@ $(document).ready(function() {
     }, 410)
     setTimeout(function() {
       touchRippleElement.remove()
-    }, 1010)
-
+    }, 2010)
 
     // Scroll to the relevant section on menu item click
     var id = $(this).data('target')
     if (id === 'contact') {
       $('a#contact-link').get(0).click()
     } else {
-      var targetPosition = Math.max(0, $('#'+id).offset().top - topOffset)
-      $('body, html').animate( {scrollTop: targetPosition + 'px'}, 500, 'easeOutCirc')
+      var targetPosition = Math.max(0, $('#'+id).offset().top + $('#content').scrollTop() - topOffset)
+      $('#content').animate( {scrollTop: targetPosition + 'px'}, 500, 'easeOutCirc')
     }
-  })
-
-  $('#icon').click(function() {
-    $('body, html').animate( {scrollTop: '0px'}, 500, 'easeOutCirc')
   })
 
 
@@ -166,7 +156,7 @@ $(document).ready(function() {
     }
   })
 
-  $(window).scroll(function() {
+  $('#content').scroll(function() {
     if (!scrollUpdateTimer) {
       scrollUpdateTimer = setTimeout(scrollUpdate, 20)
     }

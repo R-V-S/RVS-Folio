@@ -1,0 +1,72 @@
+nav#menu {
+  transition: all 0.2s ease;
+  opacity: 1;
+  color: #fcc62b;
+  font-family: "museo-sans", sans-serif;
+  font-weight: 300;
+  font-size: 23px;
+
+  button {
+    color: #fcc62b;
+    font-family: "museo-sans", sans-serif;
+    font-weight: 300;
+    font-size: 23px;
+    padding: 0.5em 0.66em 0 0;
+    text-transform: uppercase;
+    position: relative;
+
+    i {
+      display: none;
+    }
+
+    &:hover, &:focus {
+      //color: #FDDF8B;
+      i {
+        color: #888;
+      }
+    }
+
+    &.active {
+      color: #FFECB6;
+      i {
+        color: #888;
+      }
+      .progress-bar {
+        opacity: 1;
+      }
+    }
+  }
+
+  .menu-separator {
+    margin-right: 0.66em;
+  }
+}
+#header.scrollingDown nav#menu {
+  opacity: 0;
+}
+#header.scrolled nav#menu {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  opacity: 1;
+  transition: all 0.6s ease;
+}
+
+nav#menu {
+  .progress-bar {
+    transition: opacity 0.5s ease, width 0.03s linear;
+    background: repeating-linear-gradient(45deg, #FFECB6, #FFECB6 3px, rgba(255,255,255,0) 3px, rgba(255,255,255,0) 8px);
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+  }
+
+
+}
+
+@keyframes slide-from-left {
+  0% { margin-left: -$menu-width }
+  100% { margin-left: 0 }
+}

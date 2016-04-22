@@ -10,11 +10,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta NAME="robots" content="NOINDEX, NOFOLLOW">
 
-  <script src="https://use.typekit.net/ctu4bjz.js"></script>
+  <script src="https://use.typekit.net/pgp1vbn.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
   <link rel="stylesheet" href="css/aggregate.css?v=0.1" />
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -22,75 +22,109 @@
 
 <body>
 
-  <section id="header">
-    <div id="header-contents">
-      <div id="icon"><img src="images/r-logo-material-design-sunflower.png" /></div>
-      <div id="logotype">R.V.S.</div>
-      <h1>Rajeev V. Singh</h1>
-      <h2>Full-Stack Developer &amp; Designer</h2>
-      <nav id="menu">
-        <button type="button" data-target="introduction">
-          <i class="fa fa-hand-paper-o" style="transform: rotate(90deg)"></i>
-          <span class="text">Overview</span>
-        </button>
-
-        <span class="menu-separator">/</span>
-
-        <button type="button" data-target="resume">
-          <i class="fa fa-list"></i>
-          <span class="text">Resume</span>
-        </button>
-
-        <span class="menu-separator">/</span>
-
-        <button type="button" data-target="portfolio">
-          <i class="fa fa-briefcase"></i>
-          <span class="text">Portfolio</span>
-        </button>
-      </nav>
-    </div>
+  <section id="title-bar">
+    <h1><img src="images/rajeev-v-singh.png" alt="Rajeev V. Singh" /></h1>
+    <a id="contact-link" class="contact" target="_blank" href="mailto:rajeev.v.singh@gmail.com"><i class="fa fa-envelope"></i><span class="text">Contact</span></a>
   </section>
+  <div id="title-bar-shadow"></div>
 
-  <div id="banner"></div>
-  <div id="banner-separator"></div>
+  <!-- MARK: main menu -->
+  <section id="menu-bar">
+    <nav id="menu">
+      <button type="button" data-target="introduction">
+        <i class="fa fa-hand-paper-o" style="transform: rotate(90deg)"></i>
+        <span class="text">Introduction</span>
+      </button>
+      <button type="button" data-target="portfolio">
+        <i class="fa fa-briefcase"></i>
+        <span class="text">Portfolio</span>
+      </button>
+      <button type="button" data-target="resume">
+        <i class="fa fa-list"></i>
+        <span class="text">Resume</span>
+      </button>
+      <button type="button" data-target="contact">
+        <i class="fa fa-envelope"></i>
+        <span class="text">Contact</span>
+      </button>
+      <!--
+      <button type="button" data-target="software"><i class="fa fa-code"></i>App Development</button>
+      <button type="button" data-target="fun">
+        <i class="fa fa-gamepad"></i>
+        <span class="text">Fun &amp; Games</span>
+      </button>
+      -->
+    </nav>
+  </section>
+  <!--<div id="menu-bar-shadow"></div>-->
 
   <section id="content">
     <section id="introduction">
+      <div class="pixel-slides">
+        <div class="pixel-slide"
+          data-reference="images/bit-comp-small.png"
+          data-reference-width="40"
+          data-reference-height="60"
+          data-upscale-by="4"
+          data-duration="4s">
+        </div>
+        <div class="pixel-slide"
+          data-reference="[images/bit-raj-small.png, images/bit-raj-lit-small.png]"
+          data-reference-width="40"
+          data-reference-height="60"
+          data-upscale-by="4"
+          data-duration="2s/2s"
+          data-modifier="{ type: 'spiral', 'size': '40', 'origin': '30, 10', 'color': 'rgba(246, 234, 151, 0.25)', 'start': '2s'}">
+        </div>
+        <div class="pixel-slide"
+          data-reference="images/bit-hunch-small.png"
+          data-reference-width="40"
+          data-reference-height="60"
+          data-upscale-by="4"
+          data-duration="2s"
+          data-modifier="{ type: 'spiral', 'size': '10', 'origin': '20, 35', 'orbit': '22', 'color': 'rgba(246, 234, 151, 0.25)'}">
+        </div>
+      </div>
+        <div class="intro-paragraph block">
+          <h2>Hi. </h2><p>I'm Raj, a developer and designer living in the Boston metro area. I help
+            companies create elegant sites using modern tools and frameworks. Please take a
+            look around and <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">email me</a> if there's anything
+            I can do for you. This is what I offer: </p>
+        </div>
         <div class="content-block block">
-          <ul class="strips">
-            <li id="code-strip">
-              <h3>From Creative Brief to User Testing</h3>
-              <img class="illustration" src="images/illustrations/illustration-material-design-code.png" alt="" />
-              <p>Full-stack coding &amp; design skills allow me to apply myself to any part of a project's pipeline,
-                or even to carry a project through its entire development cycle. Regardless of whether my role
-                involves wireframes, mockups, back-end infrastructure, front-end code or user tests, my objective
-                is to make sure that the client's foundational business goals are met.
+          <ul class="cards">
+            <li>
+              <h3>Code and Design</h3>
+              <img class="illustration" src="images/illustration-code.png" alt="" />
+              <p>While I usually find myself employed as a front-end developer, I'm almost always utilized for
+                back-end coding and design work as well. I'm known for being just as comfortable in Photoshop
+                and Illustrator as I am in a text editor (currently enjoying <a href="https://atom.io/">Atom</a>)
+                or a terminal.
               </p>
             </li>
-            <li id="js-strip">
-              <h3>The Power of Javascript</h3>
-              <img class="illustration" src="images/illustrations/illustration-material-design-js.png" alt="" />
-              <p>With the rising popularity of Node.js, Javascript is poised to be one of the most pervasive and flexible
+            <li>
+              <h3>JavaScript Wizardry</h3>
+              <img class="illustration" src="images/illustration-javascript.png" alt="" />
+              <p>With the rising popularity of Node.js, JavaScript is poised to be one of the most pervasive and flexible
                 languages in use. It can be used to build back-ends (Node.js), asynchronous front-ends (React.js,
-                AngularJS, Socket.io), cross-platform desktop apps (NW.js), and mobile apps (React Native).
-                Javascript is my specialization, and I'm excited about the direction the language is headed.
+                Socket.io, Angular.js), cross-platform desktop apps (NW.js), and mobile devices (Cordova and JXCore).
+                I specialize in JS, particularly Node.js and ECMAScript 2015, and I'm
+                excited about the direction the language is headed.
               </p>
             </li>
-            <li id="cms-strip">
+            <li>
               <h3>CMS Theming and Module Development</h3>
-              <img class="illustration" src="images/illustrations/illustration-material-design-cms.png" alt="" />
-               <p>Content managers and small businesses love WordPress for its intuitive UI, and developers love it
-                 for its small size and easy-to-use API. Drupal has a steeper learning curve, but its
-                 powerful module system allows it to scale in size and complexity to match the needs of
-                 large, complex organizations. With years of full-time experience with both platforms, I'm
-                 able to leverage their full potential with relative ease.
+              <img class="illustration" src="images/illustration-drupal.png" alt="" />
+               <p>I first began working with WordPress while working for an ad agency. It was easy to
+                 install, easy for clients to learn, and easy to modify. As the scope of my projects became
+                 more complex and as the organizations I worked for became
+                 larger and more complex as well, I began working with Drupal. I've since spent years
+                 writing themes (both base and child) and modules for Drupal.
               </p>
             </li>
-
-            <!-- maybe later....
-            <li id="rails-strip">
+            <li>
               <h3>Ruby on Rails Front-end Development</h3>
-              <img class="illustration" src="images/illustrations/illustration-rails.png" alt="" />
+              <img class="illustration" src="images/illustration-rails.png" alt="" />
                <p>While I'm not a Rails expert, I've had the opportunity to work on several large Rails
                  projects. Most recently, I designed and developed a complex front-end for Rails from the ground
                  up using React.js.
@@ -98,7 +132,7 @@
             </li>
             <li>
               <h3>Web Accessibility</h3>
-              <img class="illustration" src="images/illustrations/illustration-accessibility.png" alt="" />
+              <img class="illustration" src="images/illustration-accessibility.png" alt="" />
               <p>I believe that the web is for everyone, and everyone benefits from a more accessible
                 web. Changes to the web that benefit accessibility almost always have other
                 benefits. Content that can be read by screen readers to the visually impaired can also
@@ -107,7 +141,7 @@
             </li>
             <li>
               <h3>Custom API interactions</h3>
-              <img class="illustration" src="images/illustrations/illustration-api.png" alt="" />
+              <img class="illustration" src="images/illustration-api.png" alt="" />
               <p>Interacting with third-party data providers is part of the web we live in.
                 I specialize in the custom development of tools/plugins/modules
                 that push and pull data from Facebook, Instagram, Twitter, Vimeo, Flickr, and Google Maps.
@@ -115,167 +149,26 @@
             </li>
             <li>
               <h3>An Agile Approach</h3>
-              <img class="illustration" src="images/illustrations/illustration-agile.png" alt="" />
+              <img class="illustration" src="images/illustration-agile.png" alt="" />
               <p>I was first introduced to agile management in 2012, and I've since adopted the agile philosophy for
                 virtually everything. I've used it on team projects that I've led, I've pushed for it to be adopted
                 by teams that I've worked on (and succeeded), and I even use it on my personal projects.</p>
             </li>
             <li>
               <h3>Robust documentation.</h3>
-              <img class="illustration" src="images/illustrations/illustration-documentation.png" alt="" />
+              <img class="illustration" src="images/illustration-documentation.png" alt="" />
               <p>Code isn't worth much if it can't be understood and modified by other programmers. As a consequence,
                 I use self-explanatory variable names and include comments in my code, and for larger
                 projects, I write and organize separate documentation <em>simulateously as I code</em>. There, I
                 cover the things that don't fit into code comments: Why I made certain decisions, how future
                 modifications can be made, and where things can be found in the code.</p>
             </li>
-          -->
           </ul>
         </div>
-    </section>
-    <section id="resume">
-      <h2>Resume</h2>
-      <ul class="cards">
-        <li>
-          <h3>Languages</h3>
-          <ul id="languages">
-            <li>
-              <h4>Javascript</h4>
-              <p>8+ years. Up-to-date on ES6/ECMAScript 2015.</p>
-            </li>
-            <li>
-              <h4>PHP</h4>
-              <p>8+ years.</p>
-            </li>
-            <li>
-              <h4>Ruby</h4>
-              <p>2+ years.</p>
-            </li>
-            <li>
-              <h4>Python</h4>
-              <p>3+ years.</p>
-            </li>
-            <li>
-              <h4>Swift &amp; Cocoa</h4>
-              <p>1 year.</p>
-            </li>
-          </ul>
+        <p class="block">Interested? Drop me an <a href="mailto:rajeev.v.singh@gmail.com" target="_blank">email</a> and let's
+          chat!
         </p>
-      </li>
-        <li>
-          <h3>Software and Libraries</h3>
-          <ul id="software">
-            <li>
-              <h4>Node.js</h4>
-              <p>2 years of experience using Node.js with Express, Socket.io, Gulp/Grunt, and other
-                tools.</p>
-            </li>
-            <li>
-              <h4>React.js</h4>
-              <p>2 years of experience using React.js with Flux.</p>
-            </li>
-            <li>
-              <h4>AngularJS</h4>
-              <p>1 year of experience.</p>
-            </li>
-            <li>
-              <h4>MongoDB</h4>
-              <p>2 years of experience using MongoDB with Node.js.</p>
-            </li>
-            <li>
-              <h4>Drupal</h4>
-              <p>5+ years of experience, several base themes, numerous child themes, and 10+ custom modules.</p>
-            </li>
-            <li>
-              <h4>jQuery</h4>
-              <p>5+ years of experience.</p>
-            </li>
-            <li>
-              <h4>Wordpress</h4>
-              <p>Several years of previous experience, a few themes, a few plugins.</p>
-            </li>
-            <li>
-              <h4>Ruby On Rails</h4>
-              <p>Several years of experience (on and off) developing front-ends.</p>
-            </li>
-            <li>
-              <h4>Git</h4>
-              <p>Daily use of git in a multi-developer environment.</p>
-            </li>
-            <li>
-              <h4>AWS, Heroku, Modulus, Acquia, virtual Debian server</h4>
-              <p>3+ years of occasional experience configuring sites and daily experience working with sites on a variety of platforms.</p>
-            </li>
-            <li>
-              <h4>Photoshop</h4>
-              <p>Daily use of Photoshop to create mock-ups and enhance images.</p>
-            </li>
-            <li>
-              <h4>Illustrator</h4>
-              <p>Regular use of Illustrator to create vector graphics.</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h3>Experience</h3>
-          <ul class="reverse" id="experience">
-            <li>
-              <div class="timeframe">July 2015 to Present</div>
-              <h4>
-                <span class="employer">Rajeev V. Singh</span> <span class="role">Designer / Developer / Consultant</span>
-              </h4>
-              <ul>
-                <li>Designing websites and software interfaces for SaaS products.</li>
-                <li>Developing sites using Node.js, Socket.io, and MongoDB (using Mongoose).</li>
-                <li>Designing 3D printable products.</li>
-                <li>Developing OS X applications using Cocoa and Swift 2.</li>
-                <li>Programming microcontrollers for IoT devices.</li>
-              </ul>
-            </li>
-            <li>
-              <div class="timeframe">April 2013 to July 2015</div>
-              <h4>
-                <span class="employer">Berklee College of Music</span> <span class="role">Senior Front-End Developer</span>
-              </h4>
-              <ul>
-                <li>Designed www.berklee.edu and several Berklee subdomains, in accordance with college branding &amp; design guidelines.</li>
-                <li>Developed front-ends for www.berklee.edu and several Berklee subdomains in either Drupal or Ruby on Rails.</li>
-                <li>Developed Drupal modules and patches to improve and extend the functionality of www.berklee.edu for both users and administrators/content contributors.</li>
-                <li>Participated in formulating UX tests and implemented improvements based on findings.</li>
-                <li>Documented feature enhancements for both developers and content managers.</li>
-              </ul>
-            </li>
-            <li>
-              <div class="timeframe">April 2011 to April 2013</div>
-              <h4>
-                <span class="employer">Wright State University</span> <span class="role">Front-End Developer</span>
-              </h4>
-              <ul>
-                <li>Developed an extensible, device-agnostic (responsive) base theme to be used on multiple Drupal sites,
-                    notably www.wright.edu and all Wright State college sites and major subdomains.</li>
-                <li>Planned and implemented UX tests and surveys.</li>
-                <li>Developed sub-themes for departments and colleges, as needed.</li>
-                <li>Developed Drupal modules and patches to improve and extend the functionality of www.wright.edu for both users and administrators.</li>
-                <li>Created design mock-ups for Wright State colleges and departments.</li>
-              </ul>
-            </li>
-            <li>
-              <div class="timeframe">October 2008 to June 2011</div>
-              <h4>
-                <span class="employer">The Next Wave</span> <span class="role">Web Designer / Developer</span>
-              </h4>
-              <ul>
-                <li>Designed 2D &amp; 3D art for online advertising and presentations.</li>
-                <li>Developed websites using WordPress, Drupal, or Joomla.</li>
-                <li>Extended existing Content Management Systems (WordPress, Joomla, and Drupal) with PHP code (custom developed plugins) and themes.</li>
-                <li>Managed company web server (Linux+Apache).</li>
-              </ul>
-            </li>
-          </ol>
-        </li>
-      </ul>
     </section>
-
     <section id="portfolio">
       <h2>Portfolio</h2>
       <ul class="cards">
@@ -380,6 +273,96 @@
       </ul>
     </section>
 
+    <section id="resume">
+      <h2>Resume</h2>
+      <ul class="cards">
+        <li>
+          <h3>Languages</h3>
+          <ol id="languages">
+            <li><strong>Javascript</strong> - Long working history. Up-to-date and very
+              fond of ES6/ECMAScript 2015.</li>
+            <li><strong>PHP</strong> - Long working history</li>
+            <li><strong>HTML5, CSS3, Sass, Compass or Bourbon/Neat/Bitters</strong> - Long working history</li>
+            <li><strong>Ruby</strong> - Limited working history</li>
+            <li><strong>Python</strong> - Casual use</li>
+            <li><strong>Swift &amp; Cocoa</strong> - Learning OS X software development</li>
+          </ol>
+        </li>
+        <li>
+          <h3>Software and Libraries</h3>
+          <ol id="software">
+            <li><strong>Node.js</strong> - 1 year of experience, one major project and several smaller projects.</li>
+            <li><strong>React.js</strong> - 1 year of experience, one major project and several smaller projects.</li>
+            <li><strong>Drupal</strong> - 5+ years of experience, several base themes, numerous child themes, and 10+ custom modules.</li>
+            <li><strong>jQuery</strong> - 5+ years of experience.</li>
+            <li><strong>Wordpress</strong> - Several years of previous experience, a few themes, a few plugins.</li>
+            <li><strong>Ruby On Rails</strong> - Several years of experience (on and off) developing front-ends.</li>
+            <li><strong>Git</strong> - Daily use of git in a multi-developer environment.</li>
+            <li><strong>AWS, Heroku, Modulus, Acquia, virtual Debian server</strong> - 3+ years of occasional experience configuring sites and daily experience working with sites on a variety of platforms.</li>
+            <li><strong>Blender</strong> - Regular use of Blender to create 3D models for printing.</li>
+            <li><strong>Photoshop</strong> - Daily use of Photoshop to create mock-ups and enhance images.</li>
+            <li><strong>Illustrator</strong> - Regular use of Illustrator to create vector graphics.</li>
+          </ol>
+        </li>
+        <li>
+          <h3>Experience</h3>
+          <ul class="reverse" id="experience">
+            <li>
+              <div class="timeframe">July 2015 to Present</div>
+              <h4>
+                <span class="employer">Rajeev V. Singh</span> <span class="role">Designer / Developer / Consultant</span>
+              </h4>
+              <ul>
+                <li>Designing websites and software interfaces for SaaS products.</li>
+                <li>Developing sites using Node.js, Socket.io, and MongoDB (using Mongoose).</li>
+                <li>Designing 3D printable products.</li>
+                <li>Developing OS X applications using Cocoa and Swift 2.</li>
+                <li>Programming microcontrollers for IoT devices.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="timeframe">April 2013 to July 2015</div>
+              <h4>
+                <span class="employer">Berklee College of Music</span> <span class="role">Senior Front-End Developer</span>
+              </h4>
+              <ul>
+                <li>Designed www.berklee.edu and several Berklee subdomains, in accordance with college branding &amp; design guidelines.</li>
+                <li>Developed front-ends for www.berklee.edu and several Berklee subdomains in either Drupal or Ruby on Rails.</li>
+                <li>Developed Drupal modules and patches to improve and extend the functionality of www.berklee.edu for both users and administrators/content contributors.</li>
+                <li>Participated in formulating UX tests and implemented improvements based on findings.</li>
+                <li>Documented feature enhancements for both developers and content managers.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="timeframe">April 2011 to April 2013</div>
+              <h4>
+                <span class="employer">Wright State University</span> <span class="role">Front-End Developer</span>
+              </h4>
+              <ul>
+                <li>Developed an extensible, device-agnostic (responsive) base theme to be used on multiple Drupal sites,
+                    notably www.wright.edu and all Wright State college sites and major subdomains.</li>
+                <li>Planned and implemented UX tests and surveys.</li>
+                <li>Developed sub-themes for departments and colleges, as needed.</li>
+                <li>Developed Drupal modules and patches to improve and extend the functionality of www.wright.edu for both users and administrators.</li>
+                <li>Created design mock-ups for Wright State colleges and departments.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="timeframe">October 2008 to June 2011</div>
+              <h4>
+                <span class="employer">The Next Wave</span> <span class="role">Web Designer / Developer</span>
+              </h4>
+              <ul>
+                <li>Designed 2D &amp; 3D art for online advertising and presentations.</li>
+                <li>Developed websites using WordPress, Drupal, or Joomla.</li>
+                <li>Extended existing Content Management Systems (WordPress, Joomla, and Drupal) with PHP code (custom developed plugins) and themes.</li>
+                <li>Managed company web server (Linux+Apache).</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </section>
 
     <section id="obligatory-footer">
       <p id="copyright">Copyright &copy; 2016 Rajeev V. Singh</p>
@@ -392,9 +375,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="scripts/banner.js"></script>
-  <script src="scripts/scrolling.js"></script>
-  <script src="scripts/header.js"></script>
   <script src="scripts/main-nav.js"></script>
   <script src="scripts/pannable.js"></script>
   <!-- Google Analytics: -->

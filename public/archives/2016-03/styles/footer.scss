@@ -1,0 +1,13 @@
+section#obligatory-footer {
+  padding: 1em 0 1em ($menu-width + $menu-shadow-width);
+  text-align: center;
+  background: rgba(0,0,0,0.8);
+  color: #888;
+  font-size: 14px;
+  p {
+    margin: 0;
+  }
+  p#silly {
+    color: #666;
+  }
+}
