@@ -38,6 +38,13 @@
   #icon {
     float: left;
 
+    @media #{$small} {
+      margin-left: 2%;
+    }
+    @media #{$medium} {
+      margin-left: 1%;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -79,6 +86,9 @@
     opacity: 1;
 
     @media #{$small} {
+      opacity: 0;
+    }
+    @media #{$medium} {
       opacity: 0;
     }
   }

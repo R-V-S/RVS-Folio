@@ -365,6 +365,12 @@ section#obligatory-footer {
     height: 52px; }
   #header #icon {
     float: left; }
+    @media only screen and (max-width: 600px) {
+      #header #icon {
+        margin-left: 2%; } }
+    @media only screen and (max-width: 800px) {
+      #header #icon {
+        margin-left: 1%; } }
     #header #icon:hover {
       cursor: pointer; }
     #header #icon img {
@@ -395,6 +401,9 @@ section#obligatory-footer {
     display: block;
     opacity: 1; }
     @media only screen and (max-width: 600px) {
+      #header.scrolled #logotype {
+        opacity: 0; } }
+    @media only screen and (max-width: 800px) {
       #header.scrolled #logotype {
         opacity: 0; } }
   #header h1 {
