@@ -1,0 +1,87 @@
+#header {
+  z-index: 2;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  height: 600px;
+  transition: all 0.2s ease;
+
+  &.scrollingDown, &.scrolled {
+    height: 52px !important;
+    position: fixed;
+    background: #121418;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+    opacity: 0.9;
+  }
+
+  #header-contents {
+    transition: all 0.2s 0.2s ease;
+    min-width: 600px;
+    width: 600px;
+    height: 170px;
+    align-self: center;
+  }
+  &.scrollingDown #header-contents, &.scrolled #header-contents {
+    width: 90%;
+    padding: 0 5%;
+    height: 52px;
+  }
+
+  #icon {
+    float: left;
+
+    &:hover {
+      cursor: pointer;
+    }
+    
+    img {
+      transition: all 0.2s ease;
+      height: 120px;
+      width: auto;
+    }
+  }
+  &.scrollingDown #icon, &.scrolled #icon {
+    img {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  h1 {
+    color: #eee;
+    font-size: 69px;
+    line-height: 110%;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+  &.scrollingDown h1 {
+    opacity: 0;
+  }
+  &.scrolled h1 {
+    display: none;
+  }
+
+  h2 {
+    font-size: 33px;
+    line-height: 110%;
+    margin: 0;
+    opacity: 1;
+    color: #aaa;
+  }
+  &.scrollingDown h2 {
+    opacity: 0;
+  }
+  &.scrolled h2 {
+    display: none;
+  }
+  &.scrollingUp h2 {
+    display: block;
+    opacity: 1;
+  }
+
+
+}
